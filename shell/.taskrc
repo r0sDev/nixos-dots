@@ -25,9 +25,4 @@ include light-16.theme
 #include solarized-light-256.theme
 #include no-color.theme
 
-# Project colors (sobrescriben el tema)
-color.project.Home=red
-color.project.Dominium=blue
-color.project.UNLa=red
-color.project.Organization=magenta
-color.project.NixOs=blue
+news.version=2.6.0

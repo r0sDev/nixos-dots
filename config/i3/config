@@ -14,9 +14,18 @@ set $launcher rofi -show drun
 set $notes obsidian
 set $dc vesktop
 
-font pango:Hack Nerd Font 11
+font pango:Hack Nerd Font 10
 
 exec --no-startup-id nm-applet
+exec_always picom --config ~/.config/picom/picom.conf
+exec_always wal -R
+exec_always xrandr --output DVI-D-1 --mode 1920x1080 --primary --rate 144.00
+exec_always xrandr --output HDMI-1 --mode 1920x1080 --rate 144.00
+exec_always xrandr --output eDP-1 --gamma 1.0:0.95:0.9
+exec --no-startup-id polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id xsct 5500
+
 
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status
@@ -30,9 +39,9 @@ bindsym $mod+Return exec $term
 bindsym $mod+z exec $browser
 bindsym $mod+f exec $files
 bindsym $mod+q kill
-bindsym $mod+d exec $launcher
+bindsym $mod+v exec $dc
+bindsym $mod+e exec $launcher
 bindsym $mod+o exec $notes
-exec --no-startup-id polybar
 
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
@@ -44,16 +53,9 @@ bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
-#bindsym $mod+h split h
-
-bindsym $mod+v split v
-
 bindsym $mod+shift+f fullscreen toggle
-
 bindsym $mod+Shift+space floating toggle
-
 bindsym $mod+space focus mode_toggle
-
 bindsym $mod+a focus parent
 
 set $ws1 "1"
@@ -89,10 +91,9 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+bindsym $mod+r mode "resize"
 bindsym $mod+Shift+c reload
-
 bindsym $mod+Shift+r restart
-
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 mode "resize" {
@@ -110,9 +111,6 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
-bindsym $mod+r mode "resize"
-
 # Disable window titlebars entirely
 for_window [class="^.*"] border pixel 0
 
@@ -146,29 +144,18 @@ mode "$mode_gaps_outer" {
         bindsym plus  gaps outer current plus 5
         bindsym minus gaps outer current minus 5
         bindsym 0     gaps outer current set 0
-
         bindsym Shift+plus  gaps outer all plus 5
         bindsym Shift+minus gaps outer all minus 5
         bindsym Shift+0     gaps outer all set 0
-
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
 # Polybar launch script
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 
 # alt-tab window switcher
 set $i3t_alt_tab        /home/paul/.config/i3/i3-alt-tab.py n #all
 set $i3t_alt_shift_tab  /home/paul/.config/i3/i3-alt-tab.py p #all
 bindsym Mod1+Tab exec   exec $i3t_alt_tab
 bindsym Mod1+Shift+Tab  exec $i3t_alt_shift_tab
-
-exec_always feh --bg-fill ~/Downloads/wallhaven.png
-
-exec_always picom -f
-
-exec_always wal -R
-
-exec_always xrandr --output DVI-D-1 --mode 1920x1080 --primary --rate 144.00
-exec_always xrandr --output HDMI-1 --mode 1920x1089 --rate 60.00

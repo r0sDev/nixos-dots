@@ -1,30 +1,58 @@
 [font]
-size = 8.0
+size = 7.0
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "Fira Code"
 style = "Regular"
 
 [font.bold]
-family = "JetBrainsMono Nerd Font"
+family = "Fira Code"
 style = "Bold"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
+family = "Fira Code"
 style = "Italic"
 
 [font.bold_italic]
-family = "JetBrainsMono Nerd Font"
+family = "Fira Code"
 style = "Bold Italic"
 
 [colors]
 draw_bold_text_with_bright_colors = true
+
+[colors.primary]
+background = "#000000"
+foreground = "#e6e6e6"
+
+[colors.selection]
+text = "#000000"
+background = "#ffffff"
+
+[colors.normal]
+black = "#000000"
+red = "#1a1a1a"
+green = "#333333"
+yellow = "#4d4d4d"
+blue = "#666666"
+magenta = "#808080"
+cyan = "#b3b3b3"
+white = "#d9d9d9"
+
+[colors.bright]
+black = "#1a1a1a"
+red = "#333333"
+green = "#4d4d4d"
+yellow = "#808080"
+blue = "#b3b3b3"
+magenta = "#cccccc"
+cyan = "#e6e6e6"
+white = "#ffffff"
 
 [cursor]
 blink_interval = 550
 unfocused_hollow = false
 
 [cursor.style]
-shape = "Underline"
+shape = "Beam"
 blinking = "On"
 
 [env]
@@ -43,7 +71,7 @@ save_to_clipboard = true
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 
 [bell]
-animation = "EaseOutExpo"
+animation = "EaseOutSine"
 color = "#e4c9af"
 duration = 1
 

@@ -1,0 +1,5 @@
+{ config, pkgs, ... }:
+{
+    # VMware 
+   virtualisation.vmware.host.enable = true;
+  }
