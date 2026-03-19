@@ -25,13 +25,17 @@ exec_always xrandr --output eDP-1 --gamma 1.0:0.95:0.9
 exec --no-startup-id polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id xsct 5500
-
+exec_always --no-startup-id $HOME/dev/wall-watcher.sh
+exec_always --no-startup-id $HOME/dev/.set-cursor.sh
 
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
 floating_modifier $mod
 
@@ -114,8 +118,8 @@ mode "resize" {
 # Disable window titlebars entirely
 for_window [class="^.*"] border pixel 0
 
-gaps inner 10
-gaps outer 2
+gaps inner 7
+gaps outer 1
 
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
