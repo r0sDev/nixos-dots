@@ -26,7 +26,7 @@ alert = ${xrdb:color6}
 [bar/bar_top]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 30
+height = 27
 fixed-center = true
 
 background = ${colors.background}
@@ -41,18 +41,18 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Hack Nerd Font:size=10
+font-0 = Hack Nerd Font:size= 9
 
-modules-left = pulseaudio memory cpu
+modules-left = cpu memory filesystem
 modules-center = date
-modules-right = filesystem
+modules-right =network battery
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
 [module/filesystem]
 type = internal/fs
-interval = 25
+interval = 10
 
 mount-0 = /
 
@@ -165,3 +165,26 @@ menu-3-1-exec = menu-open-0
 
 [settings]
 screenchange-reload = true
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+format-charging = <label-charging>
+format-discharging = <label-discharging>
+label-charging = bat: %percentage%% ↑
+label-discharging = bat: %percentage%% ↓
+label-full = bat: full
+format-charging-prefix = "bat: "
+format-charging-prefix-foreground = ${xrdb:color2}
+
+[module/network]
+type = internal/network
+interface = wlp2s0
+interface-type = wired
+accumulate-stats = true
+format-connected = <label-connected>
+label-connected = ip: %local_ip%
+format-disconnected = <label-disconnected>
+label-disconnected = ip: N/A

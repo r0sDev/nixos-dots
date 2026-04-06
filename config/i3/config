@@ -16,13 +16,15 @@ set $dc vesktop
 
 font pango:Hack Nerd Font 10
 
-exec --no-startup-id nm-applet
-exec_always picom --config ~/.config/picom/picom.conf
-exec_always wal -R
+#exec --no-startup-id nm-applet
+exec --no-startup-id xset s off -dpms
+exec --no-startup-id sleep 1 && renice -n -5 -p $(pgrep -x i3)
+exec --no-startup-id picom --backend glx --vsync --use-damage --no-fading-openclose
+#exec_always picom --config ~/.config/picom/picom.conf
+# exec_always wal -R
 exec_always xrandr --output DVI-D-1 --mode 1920x1080 --primary --rate 144.00
 exec_always xrandr --output HDMI-1 --mode 1920x1080 --rate 144.00
 exec_always xrandr --output eDP-1 --gamma 1.0:0.95:0.9
-exec --no-startup-id polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id xsct 5500
 exec_always --no-startup-id $HOME/dev/wall-watcher.sh
@@ -58,8 +60,7 @@ bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
 bindsym $mod+shift+f fullscreen toggle
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
+bindsym $mod+space floating toggle
 bindsym $mod+a focus parent
 
 set $ws1 "1"
@@ -155,11 +156,13 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-# Polybar launch script
-
-
 # alt-tab window switcher
 set $i3t_alt_tab        /home/paul/.config/i3/i3-alt-tab.py n #all
 set $i3t_alt_shift_tab  /home/paul/.config/i3/i3-alt-tab.py p #all
 bindsym Mod1+Tab exec   exec $i3t_alt_tab
 bindsym Mod1+Shift+Tab  exec $i3t_alt_shift_tab
+
+# alacritty window rules
+for_window [class="Alacritty"] floating enable
+for_window [class="Alacritty"] resize set 800 500
+for_window [class="Alacritty"] move position center
