@@ -6,10 +6,10 @@ alias c="clear"
 alias mv="mv -i"
 alias rm="rm -Iv"
 alias k="pkill"
-alias ls='exa --icons'
 alias l='exa -la --icons --git'
 alias tree='exa --tree --icons'
 alias v="nvim"
+alias sv="sudo nvim"
 alias net="nmcli"
 alias netSearch="nmcli device wifi list"
 alias netEnter="nmcli device wifi connect"
@@ -29,17 +29,6 @@ alias sshRouter="ssh -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedAlgorithms=+ss
 PS1="\[\e[97m\]  \[\e[0m\] "
 fastfetch
 export SUDO_PROMPT="
-⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
-⠀⠀⠈⠉⠛⠻⠿⠛⠛⢛⣩⣭⣛⢿⣿⣿⣿⣿⣿⣷⣄
-⠀⠀⠀⣾⣿⣦⠀⠀⠀⠀⠀⠉⠙⢷⣽⣿⣿⣿⣿⡇⢉⡀
-⠀⠀⠀⣿⣿⣿⣷⣄⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⡇⣾⡇
-⠀⠀⠀⣿⣿⣿⣿⣿⣿⣷⣶⣿⣿⣿⣿⣿⣿⣿⠟⣀⣫    Not so fast
-⠀⠀⠀⠿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠏⠘⠿⠃
-⠀⠀⠀⠀⠀⠘⢿⣆⢻⣿⣿⣿⣿⣿⣿⣿⡇⡀⠀
-⠀⠀⠀⠀⠀⣀⣠⣿⣷⣝⠿⠟⠋⠉⠹⡟⣰⡇
-⠀⠀⢀⣤⣠⣿⣿⣿⣿⣿⣿⣶⣶⠟⠁⠀⣿⠁
-⠀⠀⠀⠙⠋⠈⠙⠿⠿⠟⣿⠋⠀⠀⠀⢰⡇
-⠀⠀⠀⠐⠒⠒⠒⠲⣿⡆
  Enter the magic words:
 "
 export XCURSOR_THEME=Soyjak
