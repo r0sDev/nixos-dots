@@ -5,7 +5,5 @@
   - btop
   - picom
   - rofi
-  - nvimrofi
   - nvim
-  - bash
 
