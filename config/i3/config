@@ -1,7 +1,4 @@
-###################
-#  absolute shit  #
-###################
-
+# Some i3 config
 set $mod Mod4
 set $left h
 set $down j
@@ -14,28 +11,24 @@ set $launcher rofi -show drun
 set $notes obsidian
 set $dc vesktop
 
-font pango:Hack Nerd Font 10
+font pango:Terminus Regular 10
 
-#exec --no-startup-id nm-applet
-exec --no-startup-id xset s off -dpms
-exec --no-startup-id sleep 1 && renice -n -5 -p $(pgrep -x i3)
-exec --no-startup-id picom --backend glx --vsync --use-damage --no-fading-openclose
-#exec_always picom --config ~/.config/picom/picom.conf
-# exec_always wal -R
+exec --no-startup-id xset s 300 300 -dpms
+exec --no-startup-id sleep 1 && renice -n -10 -p $(pgrep -x i3) && taskset -cp 0 $(pgrep -x i3)
+exec --no-startup-id sleep 1 && renice -n -5 -p $(pgrep -x Xorg)
+exec --no-startup-id picom --backend glx --vsync --use-damage --no-fading-openclose --no-vsync-use-glfinish
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/dev/desktop/wall-watcher.sh
+exec_always --no-startup-id $HOME/dev/desktop/.set-cursor.sh
 exec_always xrandr --output DVI-D-1 --mode 1920x1080 --primary --rate 144.00
 exec_always xrandr --output HDMI-1 --mode 1920x1080 --rate 144.00
-exec_always xrandr --output eDP-1 --gamma 1.0:0.95:0.9
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id xsct 5500
-exec_always --no-startup-id $HOME/dev/wall-watcher.sh
-exec_always --no-startup-id $HOME/dev/.set-cursor.sh
 
 set $refresh_i3status killall -SIGUSR1 i3status
+
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
