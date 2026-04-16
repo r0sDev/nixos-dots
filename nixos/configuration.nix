@@ -8,7 +8,7 @@
     ./modules/network.nix
     ./modules/virtualisation.nix
   ];
-  # Bootloader
+  # Boot
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   # Hostname
@@ -30,13 +30,13 @@
   };
   # Console keymap
   console.keyMap = "es";
-  # User account
+  # User 
   users.users.r0s = {
     isNormalUser = true;
     description  = "Tello";
     extraGroups  = [ "networkmanager" "wheel" "video" "audio" "input" "vmware" ];
   };
-  # Allow unfree packages
+  # Unfree packages
   nixpkgs.config.allowUnfree = true;
   # Flakes + nix-command
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -48,7 +48,7 @@
     enable = true;
     interval = "weekly";
   };
-  # GPG / SSH agent
+  # ssh agent
   programs.gnupg.agent = {
     enable           = true;
     enableSSHSupport = true;
@@ -56,11 +56,9 @@
   environment.shellAliases = {
     sshConnect = "bash /etc/nixos/scripts/ssh-connect.sh";
   };
-  # TeamViewer
-  services.teamviewer.enable = false; # True if u will use it
-  # Resolucion de nombres
+  # Names resolution
   services.gvfs.enable = true;
-  # MTR (needs SUID)
+  # MTR 
   programs.mtr.enable = true;
   # Optimization
   nix.optimise.automatic = true;
@@ -87,15 +85,13 @@
     VDPAU_DRIVER     = "radeonsi";
     LIBVA_DRIVER_NAME = "radeonsi";
   };
-  # monitors things
+  # monitors rules
   services.udev.extraRules = ''
   ACTION=="change", SUBSYSTEM=="drm", RUN+="${pkgs.bash}/bin/bash -c 'sleep 2 && DISPLAY=:0 XAUTHORITY=/home/r0s/.Xauthority ${pkgs.xorg.xrandr}/bin/xrandr | grep \"HDMI-1 connected\" && DISPLAY=:0 XAUTHORITY=/home/r0s/.Xauthority /home/r0s/dev/monitors.sh'"
  '';
-
   zramSwap = {
     enable = true;
     algorithm = "zstd";
   };
-
   system.stateVersion = "25.11";
 }
