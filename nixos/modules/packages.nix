@@ -33,7 +33,6 @@
     feh
     xclip 
     rofi
-    picom
     dunst 
     dmidecode
     libreoffice
