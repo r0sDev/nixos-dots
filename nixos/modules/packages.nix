@@ -70,10 +70,6 @@
     pkgs.cifs-utils
     gh
     speedtest-cli
-    tor
-
-    # For Microslop things
-    wine
    
 ];
 }
