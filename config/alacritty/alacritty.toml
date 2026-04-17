@@ -25,7 +25,7 @@ blink_interval = 550
 unfocused_hollow = false
 
 [cursor.style]
-shape = "Beam"
+shape = "underline"
 blinking = "On"
 
 [env]
