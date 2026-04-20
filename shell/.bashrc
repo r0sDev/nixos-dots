@@ -1,14 +1,12 @@
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
-alias c="clear"
 alias mv="mv -i"
 alias rm="rm -Iv"
 alias k="pkill"
 alias l='exa -la --icons --git'
 alias tree='exa --tree --icons'
-alias v="nvim"
-alias sv="sudo nvim"
+alias sv="sudo vim"
 alias net="nmcli"
 alias netSearch="nmcli device wifi list"
 alias netEnter="nmcli device wifi connect"
@@ -23,6 +21,7 @@ alias cleanGarbage="sudo nix-collect-garbage -d"
 alias hdmiUp="xrandr --output HDMI-1 --above eDP-1 --auto"
 alias downHdmi="xrandr --output HDMI-1 --off --output eDP-1 --auto"
 alias minecraft="steam-run java -jar ~/media/TLauncher.jar"
+alias pshit="~/.local/share/pseint/pseint.sh"
 PS1="\[\e[97m\]  \[\e[0m\] "
 fastfetch
 export SUDO_PROMPT="
