@@ -4,7 +4,7 @@
 
     # Shell
     alacritty
-    neovim
+    vim
     git
     eza
     btop
