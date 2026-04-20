@@ -1,7 +1,4 @@
-" Author: Kim Silkebækken <kim.silkebaekken+vim@gmail.com>
-" Source repository: https://github.com/Lokaltog/vim-distinguished
-
-" Initialization {{{
+Initialization {{{
 	set background=dark
 
 	hi clear
