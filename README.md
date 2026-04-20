@@ -1,1 +1,1 @@
-Actual bucket of my dots
+Actual container of my nixOs dots
