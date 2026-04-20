@@ -30,6 +30,10 @@
       "type": "shell",
     },
     {
+      "key": " kernel  ",
+      "type": "kernel",
+    },
+    {
       "type": "packages",
       "key": " apps   ",
     },
