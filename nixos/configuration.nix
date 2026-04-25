@@ -12,7 +12,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   # Hostname
-  networking.hostName = "nixos";
+  networking.hostName = "r0sNixos";
   # Time zone
   time.timeZone = "America/Argentina/Buenos_Aires";
   # Internationalisation
@@ -39,7 +39,7 @@
   # Unfree packages
   nixpkgs.config.allowUnfree = true;
   # Flakes + nix-command
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command"];
   # nix-ld for dynamic binaries
   programs.nix-ld.enable = true;
   # Bluetooth
@@ -52,9 +52,6 @@
   programs.gnupg.agent = {
     enable           = true;
     enableSSHSupport = true;
-  };
-  environment.shellAliases = {
-    sshConnect = "bash /etc/nixos/scripts/ssh-connect.sh";
   };
   # Names resolution
   services.gvfs.enable = true;
