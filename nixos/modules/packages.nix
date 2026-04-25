@@ -6,19 +6,15 @@
     alacritty
     vim
     git
-    eza
     btop
     fzf
     cpufetch
     acpi
     ripgrep
     fd
-    nodejs
-    gcc
     fastfetch
 
     # Lang
-    python3
     cargo
     jdk17
 
@@ -34,7 +30,6 @@
     xclip 
     rofi
     dunst 
-    dmidecode
     libreoffice
 
     # Media
