@@ -2,20 +2,22 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./modules/desktop.nix
-    ./modules/audio.nix
-    ./modules/packages.nix
-    ./modules/network.nix
-    ./modules/virtualisation.nix
   ];
-  # Boot
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  # Hostname
+  
+  networking.networkmanager.enable = true;
+  networking.firewall.enable = true;
+  networking.firewall.allowedTCPPorts = [ 22 ];
+  networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
+  
+  services.openssh.enable = true;
+
   networking.hostName = "r0sNixos";
-  # Time zone
+
   time.timeZone = "America/Argentina/Buenos_Aires";
-  # Internationalisation
+
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS        = "es_AR.UTF-8";
@@ -28,53 +30,107 @@
     LC_TELEPHONE      = "es_AR.UTF-8";
     LC_TIME           = "es_AR.UTF-8";
   };
-  # Console keymap
-  console.keyMap = "es";
-  # User 
-  users.users.r0s = {
+
+  services.xserver.enable = true;
+  services.xserver.displayManager.startx.enable = true;
+  services.displayManager.defaultSession = "none+i3";
+
+  services.xserver = {
+    windowManager.i3 = {
+      enable        = true;
+      extraPackages = with pkgs; [
+        i3status
+      ];
+    };
+   };
+
+  users.users.r0s = { 
     isNormalUser = true;
-    description  = "Tello";
+    description  = "me btw";
     extraGroups  = [ "networkmanager" "wheel" "video" "audio" "input" "vmware" ];
+    packages = with pkgs; [];
   };
-  # Unfree packages
-  nixpkgs.config.allowUnfree = true;
-  # Flakes + nix-command
-  nix.settings.experimental-features = [ "nix-command"];
-  # nix-ld for dynamic binaries
-  programs.nix-ld.enable = true;
-  # Bluetooth
-  hardware.bluetooth.enable = true;
-  services.fstrim = {
+
+  services.xserver.xkb = {
+    layout = "es";
+    variant = "";
+  };
+#  console.keyMap = "es";
+
+
+  security.rtkit.enable = true;
+  services.pipewire = {
     enable = true;
-    interval = "weekly";
+    alsa.enable = true;
+    pulse.enable = true;
   };
-  # ssh agent
-  programs.gnupg.agent = {
-    enable           = true;
-    enableSSHSupport = true;
-  };
-  # Names resolution
-  services.gvfs.enable = true;
-  # MTR 
-  programs.mtr.enable = true;
-  # Optimization
-  nix.optimise.automatic = true;
-  # CPU governor
-  powerManagement.cpuFreqGovernor = "schedutil";
-  # Kernel
+
+  nixpkgs.config.allowUnfree = true;
+ 
+  environment.systemPackages = with pkgs; [
+  openssh
+  curl
+  wget
+  networkmanagerapplet
+  anydesk
+  nmap
+  pkgs.cifs-utils
+  
+  polybar
+  (polybar.override { pulseSupport = true; })
+  xorg.xrandr
+  brightnessctl
+  playerctl
+  pulseaudio
+  pavucontrol
+  feh
+  xclip
+  rofi
+  dunst
+  
+  fastfetch
+  cpufetch
+  acpi
+  speedtest-cli
+  btop
+  fzf
+  ripgrep
+  fd
+  eza
+  git
+  gh
+  vim
+  alacritty
+  cargo
+  
+  mpv
+  ffmpeg
+  wireplumber
+  alsa-utils
+  libreoffice
+
+  yazi
+  unzip
+  zip
+  unrar
+  p7zip
+  zathura
+  xdg-utils
+   
+  obsidian
+  taskwarrior2
+  vesktop
+  steam-run
+  pkgs.ueberzugpp
+  xfce.thunar
+
+  ];  
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernel.sysctl = {
     "vm.swappiness" = 10;
   };
-  # Force ROCm
-  hardware.opengl = {
-    enable = true;
-    extraPackages = with pkgs; [
-      libva-utils
-      libva-vdpau-driver
-      libvdpau-va-gl
-    ];
-  };
+
   environment.sessionVariables = {
     XCURSOR_THEME    = "Soyjak";
     XCURSOR_SIZE     = "32";
@@ -82,13 +138,22 @@
     VDPAU_DRIVER     = "radeonsi";
     LIBVA_DRIVER_NAME = "radeonsi";
   };
-  # monitors rules
-  services.udev.extraRules = ''
-  ACTION=="change", SUBSYSTEM=="drm", RUN+="${pkgs.bash}/bin/bash -c 'sleep 2 && DISPLAY=:0 XAUTHORITY=/home/r0s/.Xauthority ${pkgs.xorg.xrandr}/bin/xrandr | grep \"HDMI-1 connected\" && DISPLAY=:0 XAUTHORITY=/home/r0s/.Xauthority /home/r0s/dev/monitors.sh'"
- '';
-  zramSwap = {
-    enable = true;
-    algorithm = "zstd";
+
+  fonts.packages = with pkgs; [
+    jetbrains-mono
+    nerd-fonts.jetbrains-mono
+    fira-code
+    fira-code-symbols
+    terminus_font
+  ];
+
+  fonts.fontconfig = {
+    enable        = true;
+    antialias     = true;
+    hinting.enable = true;
+    hinting.style  = "slight";
+    subpixel.rgba  = "rgb";
   };
+
   system.stateVersion = "25.11";
 }
