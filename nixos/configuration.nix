@@ -8,6 +8,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   
   networking.networkmanager.enable = true;
+  systemd.services.NetworkManager-wait-online.enable = false;
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 22 ];
   networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
@@ -107,7 +108,10 @@
   ffmpeg
   wireplumber
   alsa-utils
-  libreoffice
+  onlyoffice-desktopeditors
+  drawio
+  vlc
+ 
 
   yazi
   unzip
@@ -116,7 +120,8 @@
   p7zip
   zathura
   xdg-utils
-   
+  popsicle  
+ 
   obsidian
   taskwarrior2
   vesktop
@@ -129,6 +134,25 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernel.sysctl = {
     "vm.swappiness" = 10;
+  };
+
+  services.udisks2.enable = false;
+  services.timesyncd.enable = true;
+  systemd.services.systemd-timesyncd.serviceConfig = {
+    StateDirectory = "systemd/timesync";
+  };
+  
+  services.timesyncd = {
+  servers = [
+    "0.ar.pool.ntp.org"
+    "1.ar.pool.ntp.org"
+    "2.ar.pool.ntp.org"
+    "time.cloudflare.com"
+  ];
+  fallbackServers = [
+    "0.south-america.pool.ntp.org"
+    "1.south-america.pool.ntp.org"
+   ];
   };
 
   environment.sessionVariables = {
