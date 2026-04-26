@@ -6,7 +6,7 @@ set $up k
 set $right l
 set $term alacritty
 set $browser zen
-set $files pcmanfm
+set $files thunar
 set $launcher rofi -show drun
 set $notes obsidian
 set $dc vesktop
@@ -157,5 +157,5 @@ bindsym Mod1+Shift+Tab  exec $i3t_alt_shift_tab
 
 # alacritty window rules
 for_window [class="Alacritty"] floating enable
-for_window [class="Alacritty"] resize set 700 500
+for_window [class="Alacritty"] resize set 777 507
 for_window [class="Alacritty"] move position center
