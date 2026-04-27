@@ -44,6 +44,8 @@
       ];
     };
    };
+  
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   users.users.r0s = { 
     isNormalUser = true;
@@ -103,7 +105,10 @@
   vim
   alacritty
   cargo
-  
+  codeblocksFull
+  gcc
+  util-linux
+
   mpv
   ffmpeg
   wireplumber
@@ -112,7 +117,6 @@
   drawio
   vlc
  
-
   yazi
   unzip
   zip
