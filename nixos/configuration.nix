@@ -116,7 +116,7 @@
   onlyoffice-desktopeditors
   drawio
   vlc
- 
+
   yazi
   unzip
   zip
@@ -125,6 +125,7 @@
   zathura
   xdg-utils
   popsicle  
+  scrot
  
   obsidian
   taskwarrior2
