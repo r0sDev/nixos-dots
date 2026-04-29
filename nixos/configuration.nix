@@ -50,7 +50,7 @@
   users.users.r0s = { 
     isNormalUser = true;
     description  = "me btw";
-    extraGroups  = [ "networkmanager" "wheel" "video" "audio" "input" "vmware" ];
+    extraGroups  = [ "networkmanager" "wheel" "video" "audio" "input" "libvirtd" ];
     packages = with pkgs; [];
   };
 
@@ -58,8 +58,6 @@
     layout = "es";
     variant = "";
   };
-#  console.keyMap = "es";
-
 
   security.rtkit.enable = true;
   services.pipewire = {
@@ -70,6 +68,9 @@
 
   nixpkgs.config.allowUnfree = true;
  
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+  
   environment.systemPackages = with pkgs; [
   openssh
   curl
@@ -78,6 +79,7 @@
   anydesk
   nmap
   pkgs.cifs-utils
+  qemu
   
   polybar
   (polybar.override { pulseSupport = true; })
@@ -87,7 +89,7 @@
   pulseaudio
   pavucontrol
   feh
-  xclip
+  clip
   rofi
   dunst
   
@@ -104,8 +106,7 @@
   gh
   vim
   alacritty
-  cargo
-  codeblocksFull
+    codeblocksFull
   gcc
   util-linux
 
