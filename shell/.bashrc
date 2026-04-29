@@ -17,7 +17,6 @@ alias tt="task done"
 alias td="task delete"
 alias hdmiUp="xrandr --output HDMI-1 --above eDP-1 --auto"
 alias downHdmi="xrandr --output HDMI-1 --off --output eDP-1 --auto"
-alias minecraft="steam-run java -jar ~/media/TLauncher.jar"
 alias pshit="~/.local/share/pseint/pseint.sh"
 PS1="\[\e[97m\]  \[\e[0m\] "
 fastfetch
