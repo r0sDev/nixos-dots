@@ -1,10 +1,7 @@
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
 
-alias mv="mv -i"
-alias rm="rm -Iv"
 alias k="pkill"
-alias l='exa -la --icons --git'
+alias l='exa -la --icons'
 alias tree='exa --tree --icons'
 alias sv="sudo vim"
 alias net="nmcli"
@@ -23,4 +20,3 @@ fastfetch
 export SUDO_PROMPT="
 Enter the magic words:
 "
-
