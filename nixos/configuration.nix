@@ -89,7 +89,6 @@
   pulseaudio
   pavucontrol
   feh
-  clip
   rofi
   dunst
   
@@ -162,7 +161,7 @@
   };
 
   environment.sessionVariables = {
-    XCURSOR_THEME    = "Soyjak";
+    XCURSOR_THEME    = "TuxCursor";
     XCURSOR_SIZE     = "32";
     AMD_VULKAN_ICD   = "RADV";
     VDPAU_DRIVER     = "radeonsi";
