@@ -169,11 +169,13 @@ type = internal/battery
 battery = BAT0
 adapter = AC
 full-at = 100
+low-at = 20
 format-charging = <label-charging>
 format-discharging = <label-discharging>
 label-charging = %percentage%% ↑
 label-discharging = "%percentage%% ↓  "
 label-full = "  full  "
+label-low = " Chargue now "
 format-charging-prefix = "  "  
 format-charging-prefix-foreground = ${xrdb:color2}
 
