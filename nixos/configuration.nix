@@ -9,10 +9,22 @@
   
   networking.networkmanager.enable = true;
   systemd.services.NetworkManager-wait-online.enable = false;
+  services.xserver.enable = true;
+  services.xserver.displayManager.startx.enable = true;
+  services.displayManager.defaultSession = "none+i3";
+
+  services.xserver = {
+    windowManager.i3 = {
+      enable        = true;
+      extraPackages = with pkgs; [
+        i3status
+      ];
+    };
+   };
+
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 22 ];
   networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
-  
   services.openssh.enable = true;
 
   networking.hostName = "r0sNixos";
@@ -31,20 +43,7 @@
     LC_TELEPHONE      = "es_AR.UTF-8";
     LC_TIME           = "es_AR.UTF-8";
   };
-
-  services.xserver.enable = true;
-  services.xserver.displayManager.startx.enable = true;
-  services.displayManager.defaultSession = "none+i3";
-
-  services.xserver = {
-    windowManager.i3 = {
-      enable        = true;
-      extraPackages = with pkgs; [
-        i3status
-      ];
-    };
-   };
-  
+ 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   users.users.r0s = { 
@@ -114,8 +113,6 @@
   wireplumber
   alsa-utils
   onlyoffice-desktopeditors
-  drawio
-  vlc
 
   yazi
   unzip
