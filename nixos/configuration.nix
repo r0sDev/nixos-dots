@@ -106,7 +106,7 @@
   gh
   vim
   alacritty
-    codeblocksFull
+  codeblocksFull
   gcc
   util-linux
 
@@ -171,9 +171,7 @@
 
   fonts.packages = with pkgs; [
     jetbrains-mono
-    nerd-fonts.jetbrains-mono
-    fira-code
-    fira-code-symbols
+    nerd-fonts.jetbrains-mono 
     terminus_font
   ];
 

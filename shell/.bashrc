@@ -23,6 +23,4 @@ fastfetch
 export SUDO_PROMPT="
 Enter the magic words:
 "
-export XCURSOR_THEME=Soyjak
-export XCURSOR_PATH=$HOME/.local/share/icons
-export XCURSOR_SIZE=24
+
