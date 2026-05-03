@@ -10,7 +10,6 @@ set $files thunar
 set $launcher rofi -show drun
 set $notes obsidian
 set $dc vesktop
-set $music spotify
 set $capture scrot
 
 font pango:Terminus Regular 10
@@ -18,7 +17,7 @@ font pango:Terminus Regular 10
 exec --no-startup-id xset s 300 300 -dpms
 exec --no-startup-id sleep 1 && renice -n -10 -p $(pgrep -x i3) && taskset -cp 0 $(pgrep -x i3)
 exec --no-startup-id sleep 1 && renice -n -5 -p $(pgrep -x Xorg)
-exec --no-startup-id $term -e bash -c "t"
+exec --no-startup-id $term -e bash -c 'task list; exec bash'
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/dev/desktop/wall-watcher.sh
 exec_always --no-startup-id $HOME/dev/desktop/.set-cursor.sh
@@ -43,7 +42,6 @@ bindsym $mod+q kill
 bindsym $mod+v exec $dc
 bindsym $mod+e exec $launcher
 bindsym $mod+o exec $notes
-bindsym $mod+S exec $music
 bindsym $mod+c exec $capture ~/media/captura.png
 
 bindsym $mod+$left focus left
