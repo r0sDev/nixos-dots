@@ -108,11 +108,9 @@ label = %percentage_used%%
 type = internal/date
 interval = 1
 
-date = "%d.%m.%Y"
-
 time = "%H:%M:%S"
 
-label = %time% - %date%
+label = %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
