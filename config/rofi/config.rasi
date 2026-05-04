@@ -2,7 +2,7 @@
  *
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
- * 
+ *
  * Rofi Theme File
  * Rofi Version: 1.7.3
  **/
@@ -26,7 +26,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       500px;
+    width:                       300px;
     x-offset:                    0px;
     y-offset:                    0px;
     margin:                      0px;
@@ -45,52 +45,20 @@ mainbox {
     margin:                      0px;
     padding:                     10px;
     background-color:            transparent;
-    children:                    [ "inputbar", "message", "listview" ];
+    children:                    [ "inputbar", "listview" ];
 }
 
 /*****----- Inputbar -----*****/
 inputbar {
-    enabled:                     true;
+    enabled:                     false;
     spacing:                     10px;
     padding:                     0px;
     border:                      0px;
     border-radius:               0px;
-    border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
-    children:                    [ "textbox-prompt-colon", "prompt"];
 }
 
-textbox-prompt-colon {
-    enabled:                     true;
-    expand:                      false;
-    str:                         "";
-    padding:                     10px 13px;
-    border-radius:               0px;
-}
-prompt {
-    enabled:                     true;
-    padding:                     10px;
-    border-radius:               0px;
-}
-
-/*****----- Message -----*****/
-message {
-    enabled:                     true;
-    margin:                      0px;
-    padding:                     10px;
-    border:                      0px solid;
-    border-radius:               0px;
-    border-color:                @selected;
-    background-color:            @background-alt;
-    text-color:                  @foreground;
-}
-textbox {
-    background-color:            inherit;
-    text-color:                  inherit;
-    vertical-align:              0.5;
-    horizontal-align:            0.0;
-}
 
 /*****----- Listview -----*****/
 listview {
@@ -100,7 +68,6 @@ listview {
     cycle:                       true;
     scrollbar:                   false;
     layout:                      vertical;
-    
     spacing:                     5px;
     background-color:            transparent;
     cursor:                      "default";
