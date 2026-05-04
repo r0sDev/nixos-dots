@@ -21,7 +21,7 @@ background = "#000000"
 foreground = "#ffffff"
 
 [cursor]
-blink_interval = 300
+blink_interval = 350
 unfocused_hollow = false
 
 [cursor.style]
