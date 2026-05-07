@@ -12,6 +12,9 @@
   services.xserver.enable = true;
   services.xserver.displayManager.startx.enable = true;
   services.displayManager.defaultSession = "none+i3";
+  services.xserver.displayManager.sessionCommands = ''
+    ${pkgs.xorg.xsetroot}/bin/xsetroot -cursor_name left_ptr
+  '';
 
   services.xserver = {
     windowManager.i3 = {
