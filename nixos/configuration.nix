@@ -82,6 +82,7 @@
   nmap
   pkgs.cifs-utils
   qemu
+  binwalk
   
   polybar
   (polybar.override { pulseSupport = true; })
@@ -161,7 +162,7 @@
   };
 
   environment.sessionVariables = {
-    XCURSOR_THEME    = "TuxCursor";
+    XCURSOR_THEME    = "cz-Hickson-Black";
     XCURSOR_SIZE     = "32";
     AMD_VULKAN_ICD   = "RADV";
     VDPAU_DRIVER     = "radeonsi";
