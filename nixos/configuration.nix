@@ -134,6 +134,7 @@
   steam-run
   pkgs.ueberzugpp
   xfce.thunar
+  logisim-evolution
 
   ];  
 
