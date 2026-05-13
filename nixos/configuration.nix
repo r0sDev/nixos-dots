@@ -108,7 +108,6 @@
   gh
   vim
   alacritty
-  codeblocksFull
   gcc
   util-linux
 
@@ -116,7 +115,6 @@
   ffmpeg
   wireplumber
   alsa-utils
-  onlyoffice-desktopeditors
 
   yazi
   unzip
@@ -131,7 +129,7 @@
   obsidian
   taskwarrior2
   vesktop
-  steam-run
+  onlyoffice-desktopeditors
   pkgs.ueberzugpp
   xfce.thunar
   logisim-evolution
