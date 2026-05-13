@@ -3,6 +3,7 @@ export PATH="$HOME/.local/bin:$PATH"
 alias k="pkill"
 alias l='exa -la --icons'
 alias sv="sudo vim"
+alias space="du -sh * | sort -hr | head -20"
 alias net="nmcli"
 alias netSearch="nmcli device wifi list"
 alias netEnter="nmcli device wifi connect"
@@ -28,4 +29,4 @@ alias microslop="qemu-system-x86_64 \
 PS1="\[\e[97m\]  \[\e[0m\] "
 fastfetch
 export SUDO_PROMPT="
- enter pass: "
+enter pass: "
