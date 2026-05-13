@@ -1,5 +1,5 @@
 [font]
-size = 7.0
+size = 7
 
 [font.normal]
 family = "Terminus"
@@ -21,7 +21,7 @@ background = "#000000"
 foreground = "#ffffff"
 
 [cursor]
-blink_interval = 350
+blink_interval = 300
 unfocused_hollow = false
 
 [cursor.style]
