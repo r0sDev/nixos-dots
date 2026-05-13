@@ -2,7 +2,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 alias k="pkill"
 alias l='exa -la --icons'
-alias tree='exa --tree --icons'
 alias sv="sudo vim"
 alias net="nmcli"
 alias netSearch="nmcli device wifi list"
