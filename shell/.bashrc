@@ -29,5 +29,4 @@ alias microslop="qemu-system-x86_64 \
 PS1="\[\e[97m\]  \[\e[0m\] "
 fastfetch
 export SUDO_PROMPT="
-Enter the magic words:
-"
+ enter pass: "
