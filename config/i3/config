@@ -19,7 +19,6 @@ exec --no-startup-id sleep 1 && renice -n -10 -p $(pgrep -x i3) && taskset -cp 0
 exec --no-startup-id sleep 1 && renice -n -5 -p $(pgrep -x Xorg)
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/dev/desktop/wall-watcher.sh
-exec_always --no-startup-id $HOME/dev/desktop/.set-cursor.sh
 exec_always xrandr --output DVI-D-1 --mode 1920x1080 --primary --rate 144.00
 exec_always xrandr --output HDMI-1 --mode 1920x1080 --rate 144.00
 
@@ -150,13 +149,11 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-# alt-tab window switcher
 set $i3t_alt_tab        /home/paul/.config/i3/i3-alt-tab.py n #all
 set $i3t_alt_shift_tab  /home/paul/.config/i3/i3-alt-tab.py p #all
 bindsym Mod1+Tab exec   exec $i3t_alt_tab
 bindsym Mod1+Shift+Tab  exec $i3t_alt_shift_tab
 
-# alacritty window rules
 for_window [class="Alacritty"] floating enable
 for_window [class="Alacritty"] resize set 777 507
 for_window [class="Alacritty"] move position center
