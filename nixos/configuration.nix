@@ -110,6 +110,7 @@
   gcc
   util-linux
   git-quick-stats
+  ascii-image-converter
 
   mpv
   ffmpeg
@@ -169,6 +170,8 @@
   };
 
   fonts.packages = with pkgs; [
+   jetbrains-mono
+   nerd-fonts.jetbrains-mono
    terminus_font
 
   ];

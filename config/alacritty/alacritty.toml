@@ -3,7 +3,7 @@ size = 7
 
 [font.normal]
 family = "CMU Typewriter text"
-style = "Regular"
+style="Regular" 
 
 [font.bold]
 family = "CMU Typewriter text"
