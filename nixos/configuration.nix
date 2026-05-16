@@ -30,7 +30,7 @@
   networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
   services.openssh.enable = true;
 
-  networking.hostName = "r0sNixos";
+  networking.hostName = "r0snix";
 
   time.timeZone = "America/Argentina/Buenos_Aires";
 
