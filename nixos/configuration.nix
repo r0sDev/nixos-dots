@@ -169,9 +169,8 @@
   };
 
   fonts.packages = with pkgs; [
-    jetbrains-mono
-    nerd-fonts.jetbrains-mono 
-    terminus_font
+   terminus_font
+
   ];
 
   fonts.fontconfig = {
