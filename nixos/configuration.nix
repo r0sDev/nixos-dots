@@ -110,6 +110,7 @@
   alacritty
   gcc
   util-linux
+  git-quick-stats
 
   mpv
   ffmpeg

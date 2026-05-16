@@ -2,7 +2,7 @@
 
 hora=$(date +%H)
 
-WALLPAPER_DIA="/home/r0s/media/wall/bears-in-the-forest.jpg"
+WALLPAPER_DIA="/home/r0s/media/wall/forest.png"
 WALLPAPER_NOCHE="/home/r0s/media/wall/forest.png"
 
 if ((hora >= 10 && hora < 16)); then
