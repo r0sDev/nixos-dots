@@ -1,5 +1,6 @@
 export PATH="$HOME/.local/bin:$PATH"
 
+alias clear='echo "no vas a limpiar esta boludes, dale segui"'
 alias k="pkill"
 alias l='exa -la --icons'
 alias sv="sudo vim"
@@ -29,4 +30,4 @@ alias microslop="qemu-system-x86_64 \
 PS1="\[\e[97m\]  \[\e[0m\] "
 fastfetch
 export SUDO_PROMPT="
-enter pass: "
+enter pass: "
