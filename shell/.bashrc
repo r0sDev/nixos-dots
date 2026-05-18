@@ -31,4 +31,4 @@ alias matrix="./dev/desktop/cybervis/cybervis "
 PS1="\[\e[97m\]  \[\e[0m\] "
 fastfetch
 export SUDO_PROMPT="
-enter pass: "
+enter pass: "
