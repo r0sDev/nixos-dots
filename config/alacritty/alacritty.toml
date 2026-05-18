@@ -2,15 +2,15 @@
 size = 7
 
 [font.normal]
-family = "CMU Typewriter text"
+family = "Terminus"
 style="Regular" 
 
 [font.bold]
-family = "CMU Typewriter text"
+family = "Terminus"
 style = "Bold"
 
 [font.italic]
-family = "CMU Typewriter text"
+family = "Terminus"
 style = "Light"
 
 [colors]

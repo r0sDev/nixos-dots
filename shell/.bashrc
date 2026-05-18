@@ -22,7 +22,7 @@ alias microslop="qemu-system-x86_64 \
   -cpu host \
   -smp 4 \
   -m 4G \
-  -drive file=~/win10.qcow2,format=qcow2 \
+  -drive file=/home/r0s/win10.qcow2,format=qcow2 \
   -vga virtio \
   -display gtk \
   -net nic -net user \

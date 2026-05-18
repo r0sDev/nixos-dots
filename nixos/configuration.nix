@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   imports = [
    ./hardware-configuration.nix
@@ -29,6 +29,8 @@
   networking.firewall.allowedTCPPorts = [ 22 ];
   networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
   services.openssh.enable = true;
+  networking.bridges.br0.interfaces = [ "enp3s0" ]; 
+  networking.interfaces.br0.useDHCP = true;
 
   networking.hostName = "r0snix";
 
@@ -52,7 +54,7 @@
   users.users.r0s = { 
     isNormalUser = true;
     description  = "me btw";
-    extraGroups  = [ "networkmanager" "wheel" "video" "audio" "input" "libvirtd" ];
+    extraGroups  = [ "networkmanager" "wheel" "video" "audio" "input" "libvirtd" "kvm"  ];
     packages = with pkgs; [];
   };
 
@@ -67,6 +69,15 @@
     alsa.enable = true;
     pulse.enable = true;
   };
+
+  security.wrappers.qemu-bridge-helper = {
+    source = "${pkgs.qemu}/libexec/qemu-bridge-helper";
+    owner = lib.mkForce  "root";
+    group = lib.mkForce "kvm";
+    setuid = lib.mkForce true;
+  };
+  environment.etc."qemu/bridge.conf".text = "allow br0\n";
+
 
   nixpkgs.config.allowUnfree = true;
  
