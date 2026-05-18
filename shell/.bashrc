@@ -27,6 +27,7 @@ alias microslop="qemu-system-x86_64 \
   -display gtk \
   -net nic -net user \
   -bios /nix/store/ysrdhk0a652bxhb9rl363f2gcvpixwx6-seabios-1.17.0/share/seabios/bios.bin"
+alias matrix="./dev/desktop/cybervis/cybervis "
 PS1="\[\e[97m\]  \[\e[0m\] "
 fastfetch
 export SUDO_PROMPT="
