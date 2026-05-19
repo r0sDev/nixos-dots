@@ -29,9 +29,6 @@
   networking.firewall.allowedTCPPorts = [ 22 ];
   networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
   services.openssh.enable = true;
-  networking.bridges.br0.interfaces = [ "enp3s0" ]; 
-  networking.interfaces.br0.useDHCP = true;
-
   networking.hostName = "r0snix";
 
   time.timeZone = "America/Argentina/Buenos_Aires";
