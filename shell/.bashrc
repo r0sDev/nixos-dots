@@ -16,6 +16,8 @@ alias tt="task done"
 alias td="task delete"
 alias hdmiUp="xrandr --output HDMI-1 --above eDP-1 --auto"
 alias downHdmi="xrandr --output HDMI-1 --off --output eDP-1 --auto"
+alias terminus="./dev/desktop/fontTerminus.sh"
+alias cmu="./dev/desktop/fontCMU.sh"
 alias pshit="~/.local/share/pseint/pseint.sh"
 alias microslop="qemu-system-x86_64 \
   -enable-kvm \
