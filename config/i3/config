@@ -113,7 +113,7 @@ mode "resize" {
 for_window [class="^.*"] border pixel 0
 
 gaps inner 7
-gaps outer 1
+gaps outer 7
 
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
