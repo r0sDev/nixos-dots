@@ -27,16 +27,16 @@
       "type": "break",
     },
     {
-      "key": " term   ",
-      "type": "terminal",
+      "key": " kernel ",
+      "type": "kernel",
     },
     {
       "key": " shell  ",
       "type": "shell",
     },
     {
-      "key": " kernel ",
-      "type": "kernel",
+      "key": " term   ",
+      "type": "terminal",
     },
     {
       "type": "packages",
