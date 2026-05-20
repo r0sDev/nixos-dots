@@ -1,6 +1,6 @@
 export PATH="$HOME/.local/bin:$PATH"
 
-alias clear='echo "no vas a limpiar esta boludes, dale segui"'
+alias clear="matrix"
 alias l='exa -la --icons'
 alias sv="sudo vim"
 alias space="du -sh * | sort -hr | head -20"
@@ -18,8 +18,10 @@ alias hdmiUp="xrandr --output HDMI-1 --above eDP-1 --auto"
 alias downHdmi="xrandr --output HDMI-1 --off --output eDP-1 --auto"
 alias hdmiPrimary="xrandr --output HDMI-1 eDP-1  --primary"
 
-alias terminus="./dev/desktop/fontTerminus.sh"
-alias cmu="./dev/desktop/fontCMU.sh"
+alias terminus="~/dev/desktop/fontTerminus.sh"
+alias cmu="~/dev/desktop/fontCMU.sh"
+alais ibm="~/dev/desktop/fontIBM.sh"
+alias matrix="~/dev/desktop/cybervis/cybervis "
 alias pshit="~/.local/share/pseint/pseint.sh"
 alias microslop="qemu-system-x86_64 \
   -enable-kvm \
@@ -31,7 +33,6 @@ alias microslop="qemu-system-x86_64 \
   -display gtk \
   -net nic -net user \
   -bios /nix/store/ysrdhk0a652bxhb9rl363f2gcvpixwx6-seabios-1.17.0/share/seabios/bios.bin"
-alias matrix="./dev/desktop/cybervis/cybervis "
 PS1="\[\e[97m\]  \[\e[0m\] "
 export SUDO_PROMPT="
 enter pass: "

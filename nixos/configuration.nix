@@ -181,6 +181,7 @@
    jetbrains-mono
    nerd-fonts.jetbrains-mono
    terminus_font
+   ibm-plex
 
   ];
 
