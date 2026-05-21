@@ -115,6 +115,8 @@
   gh
   vim
   alacritty
+  st
+  (st.override { conf = builtins.readFile ./st/config.h;})
   gcc
   util-linux
   git-quick-stats
