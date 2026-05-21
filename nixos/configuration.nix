@@ -99,7 +99,7 @@
   pulseaudio
   pavucontrol
   feh
-  rofi
+  dmenu
   dunst
   
   fastfetch
@@ -140,7 +140,6 @@
   vesktop
   onlyoffice-desktopeditors
   pkgs.ueberzugpp
-  xfce.thunar
   logisim-evolution
 
   ];  
