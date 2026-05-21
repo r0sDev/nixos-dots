@@ -20,7 +20,7 @@ alias hdmiPrimary="xrandr --output HDMI-1 eDP-1  --primary"
 
 alias terminus="~/dev/desktop/fontTerminus.sh"
 alias cmu="~/dev/desktop/fontCMU.sh"
-alais ibm="~/dev/desktop/fontIBM.sh"
+alias ibm="~/dev/desktop/fontIBM.sh"
 alias matrix="~/dev/desktop/cybervis/cybervis "
 alias pshit="~/.local/share/pseint/pseint.sh"
 alias microslop="qemu-system-x86_64 \
