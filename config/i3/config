@@ -6,8 +6,7 @@ set $up k
 set $right l
 set $term alacritty
 set $browser zen
-set $files thunar
-set $launcher rofi -show drun
+set $launcher dmenu_run
 set $notes obsidian
 set $dc vesktop
 set $capture scrot
@@ -35,7 +34,6 @@ floating_modifier $mod
 
 bindsym $mod+Return exec $term
 bindsym $mod+z exec $browser
-bindsym $mod+f exec $files
 bindsym $mod+q kill
 bindsym $mod+v exec $dc
 bindsym $mod+e exec $launcher
