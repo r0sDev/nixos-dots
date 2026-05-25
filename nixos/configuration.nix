@@ -115,7 +115,6 @@
   git
   gh
   vim
-  alacritty
   st
   (st.override { conf = builtins.readFile ./st/config.h; patches = [ ./st/patches/scrollback.diff ];  })
   gcc
