@@ -11,5 +11,3 @@ done
 else
 	polybar --reload bar_top &
 fi
-
-echo "Polybar launched..."
