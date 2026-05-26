@@ -1,1 +1,1 @@
-cp -r ~/dev/desktop/cmu/alacritty.toml ~/.config/alacritty/
+sudo cp -r ~/dev/desktop/cmu/config.h /etc/nixos/st/ 
