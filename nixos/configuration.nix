@@ -100,7 +100,6 @@
   pulseaudio
   pavucontrol
   feh
-  dmenu
   (dmenu.override { conf = builtins.readFile ./dmenu/config.h;})
   dunst
   
@@ -116,7 +115,6 @@
   git
   gh
   vim
-  st
   (st.override { conf = builtins.readFile ./st/config.h; patches = [ ./st/patches/scrollback.diff ];  })
   gcc
   util-linux
