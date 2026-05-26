@@ -1,1 +1,1 @@
-cp -r ~/dev/desktop/terminus/alacritty.toml ~/.config/alacritty/
+sudo cp -r ~/dev/desktop/terminus/config.h /etc/nixos/st/
