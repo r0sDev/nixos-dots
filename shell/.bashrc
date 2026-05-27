@@ -16,12 +16,11 @@ alias td="task delete"
 
 alias hdmiUp="xrandr --output HDMI-1 --above eDP-1 --auto"
 alias downHdmi="xrandr --output HDMI-1 --off --output eDP-1 --auto"
-alias hdmiPrimary="xrandr --output HDMI-1 eDP-1  --primary"
 
 alias terminus="~/dev/desktop/fontTerminus.sh"
 alias cmu="~/dev/desktop/fontCMU.sh"
 alias ibm="~/dev/desktop/fontIBM.sh"
-alias matrix="~/dev/desktop/cybervis/cybervis "
+alias matrix="~/.dev/desktop/cybervis/cybervis"
 alias pshit="~/.local/share/pseint/pseint.sh"
 
 alias microslop="qemu-system-x86_64 \
@@ -33,8 +32,8 @@ alias microslop="qemu-system-x86_64 \
   -vga virtio \
   -display gtk \
   -net nic -net user \
-  -bios /nix/store/ysrdhk0a652bxhb9rl363f2gcvpixwx6-seabios-1.17.0/share/seabios/bios.bin"
-
+  -bios /nix/store/mjf59ffyi1725g7xvp9gzp3zmga4alyw-qemu-10.1.5/share/qemu/bios.bin"
+  
 PS1="\[\e[97m\]  \[\e[0m\] "
 export SUDO_PROMPT="
 enter pass: "
