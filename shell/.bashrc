@@ -1,5 +1,5 @@
 export PATH="$HOME/.local/bin:$PATH"
-
+export PATH="$HOME/bin:$PATH"
 alias clear="matrix"
 alias l='exa -la --icons'
 alias sv="sudo vim"
@@ -23,6 +23,7 @@ alias cmu="~/dev/desktop/fontCMU.sh"
 alias ibm="~/dev/desktop/fontIBM.sh"
 alias matrix="~/dev/desktop/cybervis/cybervis "
 alias pshit="~/.local/share/pseint/pseint.sh"
+
 alias microslop="qemu-system-x86_64 \
   -enable-kvm \
   -cpu host \
@@ -33,6 +34,7 @@ alias microslop="qemu-system-x86_64 \
   -display gtk \
   -net nic -net user \
   -bios /nix/store/ysrdhk0a652bxhb9rl363f2gcvpixwx6-seabios-1.17.0/share/seabios/bios.bin"
+
 PS1="\[\e[97m\]  \[\e[0m\] "
 export SUDO_PROMPT="
 enter pass: "
