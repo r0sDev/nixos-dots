@@ -1,4 +1,3 @@
-# no way it's a config file
 set $mod Mod4
 set $left h
 set $down j
@@ -21,14 +20,14 @@ exec_always --no-startup-id $HOME/dev/desktop/wall-watcher.sh
 exec_always xrandr --output DVI-D-1 --mode 1920x1080 --primary --rate 144.00
 exec_always xrandr --output HDMI-1 --mode 1920x1080 --rate 144.00
 
-set $refresh_i3status killall -SIGUSR1 i3status
-
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+
+set $refresh_i3status killall -SIGUSR1 i3status
 
 floating_modifier $mod
 
@@ -40,9 +39,9 @@ bindsym $mod+e exec $launcher
 bindsym $mod+o exec $notes
 bindsym $mod+c exec $capture ~/media/captura.png
 
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
-bindsym $mod+$up focus up
+bindsym $mod+$left  focus left
+bindsym $mod+$down  focus down
+bindsym $mod+$up    focus up
 bindsym $mod+$right focus right
 
 bindsym $mod+Shift+j move left
