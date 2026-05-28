@@ -38,4 +38,4 @@ PS1="\[\e[97m\]  \[\e[0m\] "
 export SUDO_PROMPT="
 enter pass: "
 fastfetch
-
+t
