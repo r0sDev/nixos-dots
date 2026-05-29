@@ -106,7 +106,7 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-# Disable window titlebars entirely
+
 for_window [class="^.*"] border pixel 0
 
 gaps inner 7

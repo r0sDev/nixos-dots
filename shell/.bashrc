@@ -15,7 +15,7 @@ alias tt="task done"
 alias td="task delete"
 alias cal="geekcalendar"
 
-alias hdmiUp="xrandr --output HDMI-1 --above eDP-1 --auto"
+alias hdmiLeft="xrandr --output HDMI-1 --mode 1366x768 --rate 60.00 --left-of eDP-1"
 alias downHdmi="xrandr --output HDMI-1 --off --output eDP-1 --auto"
 
 alias terminus="~/dev/desktop/fontTerminus.sh"
