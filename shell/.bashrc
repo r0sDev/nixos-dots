@@ -1,6 +1,6 @@
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
-alias clear="matrix"
+alias clear="basta"
 alias l='exa -la --icons'
 alias sv="sudo vim"
 alias space="du -sh * | sort -hr | head -20"
@@ -13,6 +13,7 @@ alias ta="task add"
 alias tm="task modify"
 alias tt="task done"
 alias td="task delete"
+alias cal="geekcalendar"
 
 alias hdmiUp="xrandr --output HDMI-1 --above eDP-1 --auto"
 alias downHdmi="xrandr --output HDMI-1 --off --output eDP-1 --auto"
@@ -20,7 +21,6 @@ alias downHdmi="xrandr --output HDMI-1 --off --output eDP-1 --auto"
 alias terminus="~/dev/desktop/fontTerminus.sh"
 alias cmu="~/dev/desktop/fontCMU.sh"
 alias ibm="~/dev/desktop/fontIBM.sh"
-alias matrix="~/.dev/desktop/cybervis/cybervis"
 alias pshit="~/.local/share/pseint/pseint.sh"
 
 alias microslop="qemu-system-x86_64 \
