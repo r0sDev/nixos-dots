@@ -1,6 +1,6 @@
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
-alias clear="./dev/help/clear.sh"
+alias clear="~/dev/help/clear.sh"
 alias l='exa -la --icons'
 alias sv="sudo vim"
 alias space="du -sh * | sort -hr | head -20"
