@@ -1,6 +1,6 @@
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
-alias clear="basta"
+alias clear="./dev/help/clear.sh"
 alias l='exa -la --icons'
 alias sv="sudo vim"
 alias space="du -sh * | sort -hr | head -20"
@@ -13,7 +13,6 @@ alias ta="task add"
 alias tm="task modify"
 alias tt="task done"
 alias td="task delete"
-alias cal="geekcalendar"
 
 alias hdmiLeft="xrandr --output HDMI-1 --mode 1366x768 --rate 60.00 --left-of eDP-1"
 alias downHdmi="xrandr --output HDMI-1 --off --output eDP-1 --auto"
