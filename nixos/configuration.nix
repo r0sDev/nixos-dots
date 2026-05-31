@@ -27,7 +27,7 @@
 
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 22 ];
-  networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
+  networking.nameservers = [ "45.90.28.0" ];
   services.openssh.enable = true;
   networking.hostName = "r0snix";
 
