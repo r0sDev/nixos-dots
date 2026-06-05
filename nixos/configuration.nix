@@ -139,7 +139,6 @@
   obsidian
   taskwarrior2
   vesktop
-  discordo
   onlyoffice-desktopeditors
   pkgs.ueberzugpp
   logisim-evolution
