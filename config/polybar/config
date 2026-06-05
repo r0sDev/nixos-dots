@@ -8,7 +8,7 @@ alert = ${xrdb:color6}
 [bar/bar_top]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 27
+height = 20
 fixed-center = true
 
 background = ${colors.background}
@@ -17,13 +17,13 @@ foreground = ${colors.foreground}
 line-size = 0
 line-color = #f00
 
-padding-left = 2
-padding-right = 2
+padding-left = 0
+padding-right = 0
 
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Terminus  Font:size= 8
+font-0 = IBM Plex Mono:size=8
 
 modules-left = battery 
 modules-center = date
@@ -44,7 +44,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${xrdb:color2}
-label = %percentage%%
+label = "%percentage%% "
 
 [module/memory]
 type = internal/memory
@@ -72,7 +72,7 @@ format-discharging = <label-discharging>
 label-charging = "%percentage%% charging"
 label-discharging = "%percentage%% discharging"
 label-full = "full"
-format-charging-prefix = "  "  
+format-charging-prefix = ""  
 format-charging-prefix-foreground = ${xrdb:color2}
 
 [module/network]
