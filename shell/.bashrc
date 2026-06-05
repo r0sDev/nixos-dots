@@ -40,5 +40,4 @@ alias microslop="qemu-system-x86_64 \
 PS1="\[\e[97m\]  \[\e[0m\] "
 export SUDO_PROMPT="
  type access: "
-fastfetch
-t
+
