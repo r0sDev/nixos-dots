@@ -154,5 +154,5 @@ bindsym Mod1+Tab exec   exec $i3t_alt_tab
 bindsym Mod1+Shift+Tab  exec $i3t_alt_shift_tab
 
 for_window [class="st"] floating enable
-for_window [class="st"] resize set 800 700
+for_window [class="st"] resize set 710 700
 for_window [class="st"] move position center
