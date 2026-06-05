@@ -1,6 +1,7 @@
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 alias clear="~/dev/help/clear.sh"
+alias focus="echo 'press mod+shift+f'"
 alias l='exa -la --icons'
 alias sv="sudo vim"
 alias space="du -sh * | sort -hr | head -20"
@@ -35,6 +36,6 @@ alias microslop="qemu-system-x86_64 \
   
 PS1="\[\e[97m\]  \[\e[0m\] "
 export SUDO_PROMPT="
-enter pass: "
+ type access: "
 fastfetch
 t
