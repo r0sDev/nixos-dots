@@ -2,6 +2,9 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 alias clear="~/dev/help/clear.sh"
 alias focus="echo 'press mod+shift+f'"
+alias mountUsb="echo 'execute lsblk
+sudo mkdir -p /mnt/usb
+sudo mount /dev/sdx /mnt/usb'"
 alias l='exa -la --icons'
 alias sv="sudo vim"
 alias space="du -sh * | sort -hr | head -20"
