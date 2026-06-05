@@ -126,7 +126,7 @@
   wireplumber
   alsa-utils
 
-  ranger
+  yazi
   unzip
   zip
   unrar
