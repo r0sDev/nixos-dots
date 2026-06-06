@@ -15,10 +15,9 @@ font pango:Terminus Regular 10
 exec --no-startup-id xset s 300 300 -dpms
 exec --no-startup-id sleep 1 && renice -n -10 -p $(pgrep -x i3) && taskset -cp 0 $(pgrep -x i3)
 exec --no-startup-id sleep 1 && renice -n -5 -p $(pgrep -x Xorg)
-exec --no-startup-id st
+exec --no-startup-id st -e bash -c $HOME/dev/desktop/init.sh; exec bash;
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id $HOME/dev/desktop/walls/wall-watcher.sh
 exec_always xrandr --output DVI-D-1 --mode 1920x1080 --primary --rate 144.00
 exec_always xrandr --output HDMI-1 --mode 1920x1080 --rate 144.00
 
