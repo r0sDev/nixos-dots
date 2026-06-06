@@ -1,2 +1,5 @@
-Actual container of my nixOs dots
-![descripción](capture.png)
+# NixOS Dots
+
+My daily driver configuration.
+
+![Screenshot](capture.png)
