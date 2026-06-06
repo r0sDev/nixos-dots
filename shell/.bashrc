@@ -1,10 +1,12 @@
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
+
 alias clear="~/dev/help/clear.sh"
 alias focus="echo 'press mod+shift+f'"
 alias mountUsb="echo 'execute lsblk
 sudo mkdir -p /mnt/usb
 sudo mount /dev/sdx /mnt/usb'"
+
 alias l='exa -la --icons'
 alias sv="sudo vim"
 alias space="du -sh * | sort -hr | head -20"
@@ -24,6 +26,7 @@ alias downHdmi="xrandr --output HDMI-1 --off --output eDP-1 --auto"
 alias terminus="~/dev/desktop/fontTerminus.sh"
 alias cmu="~/dev/desktop/fontCMU.sh"
 alias ibm="~/dev/desktop/fontIBM.sh"
+
 alias pshit="~/.local/share/pseint/pseint.sh"
 
 alias microslop="qemu-system-x86_64 \
@@ -37,7 +40,7 @@ alias microslop="qemu-system-x86_64 \
   -net nic -net user \
   -bios /nix/store/mjf59ffyi1725g7xvp9gzp3zmga4alyw-qemu-10.1.5/share/qemu/bios.bin"
   
-PS1="\[\e[97m\]  \[\e[0m\] "
+PS1="   "
+
 export SUDO_PROMPT="
  type access: "
-
