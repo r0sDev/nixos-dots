@@ -55,8 +55,8 @@ label = %percentage_used%%
 
 [module/date]
 type = internal/date
-interval = 1
-time = "%H:%M:%S"
+interval = 5
+time = "%H:%M"
 label = %time%
 
 [settings]
