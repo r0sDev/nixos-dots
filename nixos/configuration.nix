@@ -135,7 +135,7 @@
   xdg-utils
   popsicle  
   scrot
- 
+  
   obsidian
   taskwarrior2
   vesktop
@@ -145,13 +145,7 @@
   thokr
 
   ]; 
-  nixpkgs.overlays = [
-  (final: prev: {
-    discordo = (import (builtins.fetchTarball {
-      url = "https://github.com/NixOS/nixpkgs/archive/f9d8b65950353691ab56561e7c73d2e1063d810b.tar.gz";
-     }) { inherit (prev) system; }).discordo;
-  })
-  ];
+   
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernel.sysctl = {
