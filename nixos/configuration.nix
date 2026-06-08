@@ -1,7 +1,8 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs,... }:
 {
   imports = [
    ./hardware-configuration.nix
+   inputs.mangowm.nixosModules.mango
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -9,12 +10,9 @@
   
   networking.networkmanager.enable = true;
   systemd.services.NetworkManager-wait-online.enable = false;
+  programs.mango.enable = true;
   services.xserver.enable = true;
-  services.xserver.displayManager.startx.enable = true;
-  services.displayManager.defaultSession = "none+i3";
-  services.xserver.displayManager.sessionCommands = ''
-    ${pkgs.xorg.xsetroot}/bin/xsetroot -cursor_name left_ptr
-  '';
+  services.displayManager.ly.enable = true;
 
   services.xserver = {
     windowManager.i3 = {
@@ -92,6 +90,7 @@
   qemu
   binwalk
   
+  inputs.mangowm.packages.x86_64-linux.mango
   polybar
   (polybar.override { pulseSupport = true; })
   xorg.xrandr
@@ -101,6 +100,7 @@
   pavucontrol
   feh
   (dmenu.override { conf = builtins.readFile ./dmenu/config.h;})
+  bemenu
   dunst
   
   fastfetch
