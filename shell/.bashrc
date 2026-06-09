@@ -20,8 +20,7 @@ alias tm="task modify"
 alias tt="task done"
 alias td="task delete"
 
-alias temporalHdmi="xrandr --output HDMI-A-1 --mode 1366x768 --rate 60.00 --left-of eDP-1"
-alias hdmiLeft="xrandr --output HDMI-1 --mode 1366x768 --rate 60.00 --left-of eDP-1"
+alias hdmiUp="wlr-randr --output HDMI-1 --mode 1366x768 --rate 60 --pos 0,0"
 alias downHdmi="xrandr --output HDMI-1 --off --output eDP-1 --auto"
 
 alias terminus="~/dev/desktop/fontTerminus.sh"
