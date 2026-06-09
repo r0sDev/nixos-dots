@@ -26,7 +26,6 @@
   networking.firewall.enable = true;
   networking.nameservers = [ "45.90.28.0" ];
   services.dnscrypt-proxy.enable = true:
-  services.avahi.enable = false;
   networking.hostName = "f0snix";
 
   time.timeZone = "America/Argentina/Buenos_Aires";
@@ -147,9 +146,16 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernel.sysctl = {
     "vm.swappiness" = 10;
+    "net.ipv4.conf.all.rp_filter" = 1;
+    "net.ipv4.icmp_echo_ignore_broadcasts" = 1;
+    "net.ipv4.conf.all.accept_redirects" = 0;
+    "net.ipv6.conf.all.accept_redirects" = 0;
+    "kernel.kptr_restrict" = 2;
+    "kernel.yama.ptrace_scope" = 2;
   };
 
   services.udisks2.enable = false;
+  services.avahi.enable = false;
   services.timesyncd.enable = true;
   systemd.services.systemd-timesyncd.serviceConfig = {
     StateDirectory = "systemd/timesync";
