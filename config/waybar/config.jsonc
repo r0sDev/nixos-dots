@@ -30,7 +30,7 @@
     },
     "battery": {
         "format": "{capacity}%",
-        "format-full": "{capacity}%",
+        "format-full": "full",
         "format-charging": "{capacity}% charging",
         "format-plugged": "{capacity}% connected",
         "format-full": "",
