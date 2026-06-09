@@ -7,7 +7,7 @@ alias mountUsb="echo 'execute lsblk
 sudo mkdir -p /mnt/usb
 sudo mount /dev/sdx /mnt/usb'"
 
-alias l='exa -la --icons'
+alias l='ll -la'
 alias sv="sudo vim"
 alias space="du -sh * | sort -hr | head -20"
 alias net="nmcli"
@@ -19,6 +19,11 @@ alias ta="task add"
 alias tm="task modify"
 alias tt="task done"
 alias td="task delete"
+
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit -m"
+alias gp="git push"
 
 alias hdmiUp="wlr-randr --output HDMI-1 --mode 1366x768 --rate 60 --pos 0,0"
 alias downHdmi="xrandr --output HDMI-1 --off --output eDP-1 --auto"
