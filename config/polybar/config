@@ -10,6 +10,7 @@ monitor = ${env:MONITOR:}
 width = 100%
 height = 20
 fixed-center = true
+wm-restack = generic
 
 background = ${colors.background}
 foreground = ${colors.foreground}
