@@ -87,11 +87,7 @@
     StateDirectory = "systemd/timesync";
   };
   
-  services.timesyncd = {
-  servers = [
-    "0.ar.pool.ntp.org"
-    "1.ar.pool.ntp.org"
-    "2.ar.pool.ntp.org"
+  services.timesyncd.servers = [
     "time.cloudflare.com"
   ];
 
