@@ -91,8 +91,7 @@
   binwalk
   
   inputs.mangowm.packages.x86_64-linux.mango
-  polybar
-  (polybar.override { pulseSupport = true; })
+  waybar
   xorg.xrandr
   brightnessctl
   playerctl
