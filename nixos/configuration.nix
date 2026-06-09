@@ -15,6 +15,8 @@
   services.displayManager.ly.enable = true;
 
   networking.firewall.enable = true;
+  services.networkmanager.vpn.enable = true;
+  services.networkmanager.vpn.protonvpn = true;
   services.resolved.enable = true;
   services.resolved.dnssec = "true";
   services.resolved.fallback-dns-server = [
@@ -76,6 +78,8 @@
     "kernel.kptr_restrict" = 2;
     "kernel.yama.ptrace_scope" = 2;
     "kernel.dmesg_restrict" = 1;
+    "fs.protected_symlinks" = 1;
+    "fs.protected_hardlinks" = 1;
  };
 
   services.udisks2.enable = false;
@@ -113,6 +117,8 @@
   environment.systemPackages = with pkgs; [
   openssh
   termshark
+  tcpdump
+  rkhunter
   wget
   networkmanagerapplet
   anydesk
@@ -170,7 +176,7 @@
   pkgs.ueberzugpp
   logisim-evolution
   thokr
-
+  protonvpn-gui
   ]; 
    
 
