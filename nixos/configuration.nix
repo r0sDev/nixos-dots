@@ -92,7 +92,10 @@
   
   inputs.mangowm.packages.x86_64-linux.mango
   waybar
+#borrar despues
   xorg.xrandr
+  wlr-randr
+  swaybg
   brightnessctl
   playerctl
   pulseaudio
