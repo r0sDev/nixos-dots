@@ -14,17 +14,13 @@
   services.xserver.enable = true;
   services.displayManager.ly.enable = true;
 
-  services.xserver = {
-    windowManager.i3 = {
-      enable        = true;
-      extraPackages = with pkgs; [
-        i3status
-      ];
-    };
-   };
-
   networking.firewall.enable = true;
-  networking.nameservers = [ "45.90.28.0" ];
+  services.resolved.enable = true;
+  services.resolved.dnssec = "true";
+  services.resolved.fallback-dns-server = [
+    "1.1.1.1"
+    "9.9.9.9"
+  ];
   services.dnscrypt-proxy.enable = true:
   networking.hostName = "f0snix";
 
@@ -64,6 +60,47 @@
     pulse.enable = true;
   };
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 10;
+    "net.ipv4.tcp_syncookies" = 1;
+    "net.ipv4.conf.all.rp_filter" = 1;
+    "net.ipv4.icmp_echo_ignore_broadcasts" = 1;
+    "net.ipv4.conf.all.accept_redirects" = 0;
+    "net.ipv4.conf.default.accept_redirects" = 0;
+    "net.ipv4.conf.all.secure_redirects" = 0;
+    "net.ipv4.conf.default.secure_redirects" = 0;
+    "net.ipv6.conf.all.accept_redirects" = 0;
+    "net.ipv6.conf.default.accept_redirects" = 0;
+    "net.ipv6.conf.all.accept_source_route" = 0;
+    "kernel.kptr_restrict" = 2;
+    "kernel.yama.ptrace_scope" = 2;
+    "kernel.dmesg_restrict" = 1;
+ };
+
+  services.udisks2.enable = false;
+  services.avahi.enable = false;
+  services.timesyncd.enable = true;
+  hardware.bluetooth.enable = false;
+  security.tpm2.enable = false;
+  systemd.services.systemd-timesyncd.serviceConfig = {
+    StateDirectory = "systemd/timesync";
+  };
+  
+  services.timesyncd = {
+  servers = [
+    "0.ar.pool.ntp.org"
+    "1.ar.pool.ntp.org"
+    "2.ar.pool.ntp.org"
+    "time.cloudflare.com"
+  ];
+
+  fallbackServers = [
+    "0.south-america.pool.ntp.org"
+    "1.south-america.pool.ntp.org"
+   ];
+  };
+
   security.wrappers.qemu-bridge-helper = {
     source = "${pkgs.qemu}/libexec/qemu-bridge-helper";
     owner = lib.mkForce  "root";
@@ -71,7 +108,6 @@
     setuid = lib.mkForce true;
   };
   environment.etc."qemu/bridge.conf".text = "allow br0\n";
-
 
   nixpkgs.config.allowUnfree = true;
  
@@ -134,8 +170,7 @@
   
   obsidian
   taskwarrior2
-  vesktop
-  onlyoffice-desktopeditors
+  libreoffice 
   pkgs.ueberzugpp
   logisim-evolution
   thokr
@@ -143,36 +178,6 @@
   ]; 
    
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernel.sysctl = {
-    "vm.swappiness" = 10;
-    "net.ipv4.conf.all.rp_filter" = 1;
-    "net.ipv4.icmp_echo_ignore_broadcasts" = 1;
-    "net.ipv4.conf.all.accept_redirects" = 0;
-    "net.ipv6.conf.all.accept_redirects" = 0;
-    "kernel.kptr_restrict" = 2;
-    "kernel.yama.ptrace_scope" = 2;
-  };
-
-  services.udisks2.enable = false;
-  services.avahi.enable = false;
-  services.timesyncd.enable = true;
-  systemd.services.systemd-timesyncd.serviceConfig = {
-    StateDirectory = "systemd/timesync";
-  };
-  
-  services.timesyncd = {
-  servers = [
-    "0.ar.pool.ntp.org"
-    "1.ar.pool.ntp.org"
-    "2.ar.pool.ntp.org"
-    "time.cloudflare.com"
-  ];
-  fallbackServers = [
-    "0.south-america.pool.ntp.org"
-    "1.south-america.pool.ntp.org"
-   ];
-  };
 
   environment.sessionVariables = {
     XCURSOR_THEME    = "cz-Hickson-Black";
