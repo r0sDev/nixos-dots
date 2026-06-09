@@ -24,10 +24,10 @@
    };
 
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [ 22 ];
   networking.nameservers = [ "45.90.28.0" ];
-  services.openssh.enable = true;
-  networking.hostName = "r0snix";
+  services.dnscrypt-proxy.enable = true:
+  services.avahi.enable = false;
+  networking.hostName = "f0snix";
 
   time.timeZone = "America/Argentina/Buenos_Aires";
 
@@ -85,6 +85,7 @@
   wget
   networkmanagerapplet
   anydesk
+  rustdesk
   nmap
   pkgs.cifs-utils
   qemu
