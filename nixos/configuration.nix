@@ -124,6 +124,7 @@
   
   inputs.mangowm.packages.x86_64-linux.mango
   waybar
+  swaybg
   brightnessctl
   playerctl
   pulseaudio
@@ -171,7 +172,7 @@
   pkgs.ueberzugpp
   logisim-evolution
   thokr
-  protonvpn-gui
+  proton-vpn
   ]; 
    
 
