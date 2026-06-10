@@ -14,16 +14,22 @@
   services.xserver.enable = true;
   services.displayManager.ly.enable = true;
 
+  services.openssh.enable = false;
   networking.firewall.enable = true;
-  services.networkmanager.vpn.enable = true;
-  services.networkmanager.vpn.protonvpn = true;
-  services.resolved.enable = true;
-  services.resolved.dnssec = "true";
-  services.resolved.fallback-dns-server = [
+  networking.firewall.allowedTCPPorts = [];
+  networking.nameservers = [
     "1.1.1.1"
     "9.9.9.9"
+  ]; 
+ 
+  services.timesyncd.servers = [
+    "time.cloudflare.com"
+    "0.ar.pool.ntp.org"
+    "1.ar.pool.ntp.org"
+    "2.ar.pool.ntp.org"
   ];
-  services.dnscrypt-proxy.enable = true:
+
+  services.dnscrypt-proxy.enable = true;
   networking.hostName = "f0snix";
 
   time.timeZone = "America/Argentina/Buenos_Aires";
@@ -90,17 +96,7 @@
   systemd.services.systemd-timesyncd.serviceConfig = {
     StateDirectory = "systemd/timesync";
   };
-  
-  services.timesyncd.servers = [
-    "time.cloudflare.com"
-  ];
-
-  fallbackServers = [
-    "0.south-america.pool.ntp.org"
-    "1.south-america.pool.ntp.org"
-   ];
-  };
-
+ 
   security.wrappers.qemu-bridge-helper = {
     source = "${pkgs.qemu}/libexec/qemu-bridge-helper";
     owner = lib.mkForce  "root";
@@ -118,13 +114,12 @@
   openssh
   termshark
   tcpdump
-  rkhunter
   wget
   networkmanagerapplet
   anydesk
   rustdesk
   nmap
-  pkgs.cifs-utils
+  cifs-utils
   qemu
   
   inputs.mangowm.packages.x86_64-linux.mango
