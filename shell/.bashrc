@@ -1,7 +1,6 @@
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
-alias clear="~/dev/help/clear.sh"
 alias focus="echo 'press mod+shift+f'"
 alias mountUsb="echo 'execute lsblk
 sudo mkdir -p /mnt/usb
