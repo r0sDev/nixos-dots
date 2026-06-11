@@ -26,11 +26,11 @@ alias gc="git commit -m"
 alias gp="git push"
 
 alias hdmiUp="wlr-randr --output HDMI-1 --mode 1366x768 --rate 60 --pos 0,0"
-alias downHdmi="xrandr --output HDMI-1 --off --output eDP-1 --auto"
 
 alias terminus="~/dev/desktop/fontTerminus.sh"
 alias cmu="~/dev/desktop/fontCMU.sh"
 alias ibm="~/dev/desktop/fontIBM.sh"
+alias walls="~/dev/desktop/mango/wall-selector.sh"
 
 alias pshit="~/.local/share/pseint/pseint.sh"
 
