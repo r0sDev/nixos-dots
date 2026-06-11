@@ -1,6 +1,6 @@
 /* appearance */
 static unsigned int borderpx  = 2;        /* border pixel of window */
-static char *font = "Fairfax:pixelsize=14";
+static char *font = "Fairfax:pixelsize=15";
 static int  linespace         = 0;        /* additional space between lines */
 static int  keepiconified     = 0;
 static float cwscale          = 1.0;
