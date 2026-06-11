@@ -4,7 +4,6 @@
     "height": 25, // Waybar height (to be removed for auto height)
     "width": 700,
     "spacing": 4, // Gaps between modules (4px)
-
     "modules-left": [
        "battery",
     ],
