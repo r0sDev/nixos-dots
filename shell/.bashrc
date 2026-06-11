@@ -30,6 +30,7 @@ alias hdmiUp="wlr-randr --output HDMI-1 --mode 1366x768 --rate 60 --pos 0,0"
 alias terminus="~/dev/desktop/fontTerminus.sh"
 alias cmu="~/dev/desktop/fontCMU.sh"
 alias ibm="~/dev/desktop/fontIBM.sh"
+alias fairfax="~/dev/desktop/fontFairfax.sh"
 alias walls="~/dev/desktop/wall-selector.sh"
 
 alias pshit="~/.local/share/pseint/pseint.sh"
