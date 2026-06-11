@@ -1,6 +1,6 @@
 /* appearance */
 static unsigned int borderpx  = 2;        /* border pixel of window */
-static char *font = "IBM Plex Mono:pixelsize=13:antialias=true:autohint=true";
+static char *font = "Fairfax:pixelsize=13:antialias=true:autohint=true";
 static int  linespace         = 0;        /* additional space between lines */
 static int  keepiconified     = 0;
 static float cwscale          = 1.0;
@@ -52,8 +52,7 @@ static unsigned int blinktimeout = 800;
 /*
  * thickness of underline and bar cursors
  */
-static unsigned int cursorthickness = 1;
-
+static unsigned int cursorthickness = 2;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
@@ -122,7 +121,7 @@ unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 0;
+static unsigned int cursorshape = 2;
 
 /*
  * Default columns and rows numbers
