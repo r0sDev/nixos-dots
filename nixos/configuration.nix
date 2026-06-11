@@ -30,7 +30,7 @@
   ];
 
   services.dnscrypt-proxy.enable = true;
-  networking.hostName = "f0snix";
+  networking.hostName = "r0snix";
 
   time.timeZone = "America/Argentina/Buenos_Aires";
 
