@@ -2,7 +2,8 @@ set nocompatible
 set encoding=utf-8
 set history=500
 syntax on
-colorscheme marques-de-itu
+set t_Co=256
+colorscheme 256_noir
 set number
 set relativenumber
 set cursorline
@@ -43,3 +44,7 @@ vnoremap K :m '<-2<CR>gv=gv
 let &t_SI = "\e[2 q"
 let &t_SR = "\e[2 q"
 let &t_EI = "\e[2 q"
+
+highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=233 guifg=NONE guibg=#121212
+autocmd InsertEnter * highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=234 guifg=NONE guibg=#1c1c1c
+autocmd InsertLeave * highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=233 guifg=NONE guibg=#121212
