@@ -165,7 +165,7 @@
   zathura
   xdg-utils
   popsicle  
-  scrot
+  grim 
   
   obsidian
   taskwarrior2
