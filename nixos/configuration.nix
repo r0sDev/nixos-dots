@@ -124,6 +124,7 @@
   
   inputs.mangowm.packages.x86_64-linux.mango
   waybar
+  wlr-randr
   swaybg
   brightnessctl
   playerctl
