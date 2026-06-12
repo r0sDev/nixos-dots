@@ -1,28 +1,32 @@
 #!/usr/bin/env bash
 
-WALL_DIA_1="/home/r0s/media/wall/0355.jpg"
-WALL_DIA_2="/home/r0s/media/wall/0356.jpg"
-WALL_DIA_3="/home/r0s/media/wall/eJ2f6Lm.jpeg"
-WALL_NOCHE_1="/home/r0s/media/wall/monocr_build.jpg"
-WALL_NOCHE_2="/home/r0s/media/wall/galen-crout.jpg"
+WALL1="/home/r0s/media/wall/1.jpg"
+WALL2="/home/r0s/media/wall/forest.jpg"
+WALL3="/home/r0s/media/wall/galen-crout.jpg"
+WALL4="/home/r0s/media/wall/nasa-OLlj17tUZnU-unsplash.jpg"
+WALL5="/home/r0s/media/wall/wp8860785-nasa-4k-wallpapers.jpg"
 
 read -p "select wall: " selectedWall
 case $selectedWall in
     one)
     echo "selected wall 1"
-    swaybg -i "$WALL_DIA_1" -m fill &
+    swaybg -i "$WALL1" -m fill &
     ;;
     two)
     echo "selected wall 2"
-    swaybg -i "$WALL_DIA_3" -m fill &
+    swaybg -i "$WALL2" -m fill &
     ;;
     three)
     echo "selected wall 3"
-    swaybg -i "$WALL_NOCHE_1" -m fill & 
+    swaybg -i "$WALL3" -m fill & 
     ;;
     four)
     echo "selected wall 4"
-    swaybg -i "$WALL_NOCHE_2" -m fill &
+    swaybg -i "$WALL4" -m fill &
+    ;;
+    five)
+    echo "selected wall 4"
+    swaybg -i "$WALL5" -m fill &
     ;;
     *)
     echo "error on typing"
