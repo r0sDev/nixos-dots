@@ -2,8 +2,7 @@ set nocompatible
 set encoding=utf-8
 set history=500
 syntax on
-set t_Co=256
-colorscheme 256_noir
+colorscheme marques-de-itu
 set number
 set relativenumber
 set cursorline
