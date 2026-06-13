@@ -3,7 +3,10 @@ set encoding=utf-8
 set history=500
 syntax on
 colorscheme marques-de-itu
-set number
+set nonumber
+set norelativenumber
+set signcolumn=no
+set foldcolumn=0
 set relativenumber
 set cursorline
 set scrolloff=8
