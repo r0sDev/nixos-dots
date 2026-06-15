@@ -27,6 +27,10 @@
       "type": "break",
     },
     {
+      "key": " os     ",
+      "type": "os",
+    },
+    {
       "key": " kernel ",
       "type": "kernel",
     },
