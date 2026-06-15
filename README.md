@@ -2,4 +2,4 @@
 
 My daily driver configuration.
 
-![Screenshot](capture.png)
+![Screenshot](capture-2.png)
