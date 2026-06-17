@@ -174,6 +174,7 @@
   logisim-evolution
   thokr
   proton-vpn
+  mullvad
   ]; 
    
 
