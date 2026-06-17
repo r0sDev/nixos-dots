@@ -5,6 +5,7 @@ WALL2="/home/r0s/media/wall/forest.jpg"
 WALL3="/home/r0s/media/wall/galen-crout.jpg"
 WALL4="/home/r0s/media/wall/nasa-OLlj17tUZnU-unsplash.jpg"
 WALL5="/home/r0s/media/wall/wp8860785-nasa-4k-wallpapers.jpg"
+WALL6="/home/r0s/media/wall/kittensgame.jpg"
 
 read -p "select wall: " selectedWall
 case $selectedWall in
@@ -25,8 +26,12 @@ case $selectedWall in
     swaybg -i "$WALL4" -m fill &
     ;;
     five)
-    echo "selected wall 4"
+    echo "selected wall 5"
     swaybg -i "$WALL5" -m fill &
+    ;;
+    six)
+    echo "selected wall 6"
+    swaybg -i "$WALL6" -m fill &
     ;;
     *)
     echo "error on typing"
