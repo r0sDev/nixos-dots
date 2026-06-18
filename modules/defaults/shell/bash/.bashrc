@@ -33,8 +33,9 @@ alias ibm="~/dev/desktop/fontIBM.sh"
 alias fairfax="~/dev/desktop/fontFairfax.sh"
 alias walls="~/dev/desktop/wall-selector.sh"
 
-alias pshit="~/.local/share/pseint/pseint.sh"
+alias news="hacker-news-tui"
 
+alias pshit="~/.local/share/pseint/pseint.sh"
 alias microslop="qemu-system-x86_64 \
   -enable-kvm \
   -cpu host \
