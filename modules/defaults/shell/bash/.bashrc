@@ -18,6 +18,7 @@ alias ta="task add"
 alias tm="task modify"
 alias tt="task done"
 alias td="task delete"
+alias diary="~/development/desktop/diary/diary.sh"
 
 alias gs="git status"
 alias ga="git add"
