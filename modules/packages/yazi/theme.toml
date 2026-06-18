@@ -1,0 +1,88 @@
+[flavor]
+dark = ""
+light = ""
+
+[mgr]
+cwd = { fg = "white" }
+
+# Fila bajo el cursor al navegar: fondo blanco fijo
+hovered         = { fg = "black", bg = "white" }
+preview_hovered = { fg = "black", bg = "white" }
+
+find_keyword  = { fg = "white", bold = true, underline = true }
+find_position = { fg = "gray", bg = "reset", bold = true }
+
+symlink_target = { fg = "gray", italic = true }
+
+marker_copied   = { fg = "white",    bg = "white" }
+marker_cut      = { fg = "darkgray", bg = "darkgray" }
+marker_marked   = { fg = "gray",     bg = "gray" }
+marker_selected = { fg = "white",    bg = "white" }
+
+count_copied   = { fg = "black", bg = "white" }
+count_cut      = { fg = "black", bg = "darkgray" }
+count_selected = { fg = "black", bg = "gray" }
+
+border_symbol = "│"
+border_style  = { fg = "darkgray" }
+
+[indicator]
+parent  = { fg = "darkgray" }
+current = { fg = "white" }
+preview = { fg = "darkgray" }
+
+[tabs]
+active   = { fg = "black", bg = "white" }
+inactive = { fg = "gray" }
+
+[mode]
+normal_main = { fg = "black", bg = "white", bold = true }
+normal_alt  = { fg = "white", bg = "darkgray" }
+select_main = { fg = "black", bg = "gray", bold = true }
+select_alt  = { fg = "gray", bg = "darkgray" }
+unset_main  = { fg = "black", bg = "darkgray", bold = true }
+unset_alt   = { fg = "darkgray", bg = "black" }
+
+[status]
+perm_type  = { fg = "white" }
+perm_read  = { fg = "white" }
+perm_write = { fg = "gray" }
+perm_exec  = { fg = "white" }
+perm_sep   = { fg = "darkgray" }
+progress_label  = { fg = "white", bold = true }
+progress_normal = { fg = "white", bg = "darkgray" }
+progress_error  = { fg = "darkgray", bg = "black" }
+
+[which]
+cand = { fg = "white" }
+rest = { fg = "darkgray" }
+desc = { fg = "gray" }
+
+[tasks]
+border  = { fg = "white" }
+hovered = { fg = "black", bg = "white" }
+
+[help]
+on      = { fg = "white" }
+run     = { fg = "gray" }
+desc    = { fg = "darkgray" }
+hovered = { fg = "black", bg = "white", bold = true }
+
+# Sin color por tipo de archivo, todo en gris/blanco
+[filetype]
+rules = [
+  { url = "*/", fg = "white", bold = true },
+  { url = "*", is = "orphan", fg = "darkgray" },
+  { url = "*", is = "exec", fg = "white", bold = true },
+  { url = "*", fg = "gray" },
+]
+
+# Iconos fuera, monocromo real sin glifos de color
+[icon]
+dirs  = []
+files = []
+exts  = []
+globs = []
+conds = [
+  { if = "dir", text = "/" },
+]

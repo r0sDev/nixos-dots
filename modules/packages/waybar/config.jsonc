@@ -1,0 +1,42 @@
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 25, // Waybar height (to be removed for auto height)
+    "width": 500,
+    "spacing": 4, // Gaps between modules (4px)
+    "modules-left": [
+       "battery",
+    ],
+    "modules-center": [
+       "clock"
+    ],
+    "modules-right": [
+        "network",
+        "memory",
+        "cpu",
+    ],
+
+    "clock": {
+        "timezone": "America/Buenos_Aires",
+        "tooltip-format": "{:%H:%M}",
+   },
+    "cpu": {
+        "format": "{usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}%"
+    },
+    "battery": {
+        "format": "{capacity}%",
+        "format-full": "full",
+        "format-charging": "{capacity}% charging",
+        "format-plugged": "{capacity}% connected",
+        "format-full": "",
+    },
+    "network": {
+        "format-wifi": "{ipaddr}",
+        "format-ethernet": "eth: {ipaddr}",
+        "format-disconnected": "Disconnected",
+     },
+    }

@@ -1,0 +1,20 @@
+* {
+    background: #000000;
+    color: #ffffff;
+    font-family: "Terminus";
+    font-size: 10px;
+    border: none;
+    border-radius: 0;
+    padding: 0 4px;
+}
+
+window#waybar {
+    background: #000000;
+    color: #ffffff;
+}
+
+#battery, #clock, #cpu, #memory, #network {
+    background: #000000;
+    color: #ffffff;
+    padding: 0 6px;
+}
