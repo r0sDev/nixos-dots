@@ -23,7 +23,7 @@ alias gs="git status"
 alias ga="git add"
 alias gc="git commit -m"
 alias gp="git push"
-alias nix-repo="~/dev/updaters/nixos-dots-update.sh"
+alias nix-repo="~/development/updaters/nixos-dots-update.sh"
 
 alias hLeft="wlr-randr --output HDMI-A-1 --mode 1366x768 --pos 0,0"
 
