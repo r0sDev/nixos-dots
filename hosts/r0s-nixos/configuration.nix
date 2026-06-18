@@ -173,11 +173,8 @@
   pkgs.ueberzugpp
   logisim-evolution
   thokr
-  proton-vpn
   mullvad
-  ]; 
-   
-
+ ]; 
 
   environment.sessionVariables = {
     XCURSOR_THEME    = "cz-Hickson-Black";
