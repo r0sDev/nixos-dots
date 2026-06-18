@@ -48,7 +48,7 @@ alias microslop="qemu-system-x86_64 \
   -net nic -net user \
   -bios /nix/store/mjf59ffyi1725g7xvp9gzp3zmga4alyw-qemu-10.1.5/share/qemu/bios.bin"
   
-PS1=" $ "
-
+PS1='\[\e[38;5;180m\]ssh://\u · \[\e[38;5;255m\] '
+export PS1
 export SUDO_PROMPT="
  type access: "
