@@ -28,11 +28,11 @@ alias nix-repo="~/development/updaters/nixos-dots-update.sh"
 
 alias hLeft="wlr-randr --output HDMI-A-1 --mode 1366x768 --pos 0,0"
 
-alias terminus="~/dev/desktop/fontTerminus.sh"
-alias cmu="~/dev/desktop/fontCMU.sh"
-alias ibm="~/dev/desktop/fontIBM.sh"
-alias fairfax="~/dev/desktop/fontFairfax.sh"
-alias walls="~/dev/desktop/wall-selector.sh"
+alias terminus="~/development/desktop/fontTerminus.sh"
+alias cmu="~/development/desktop/fontCMU.sh"
+alias ibm="~/development/desktop/fontIBM.sh"
+alias fairfax="~/development/desktop/fontFairfax.sh"
+alias walls="~/development/desktop/wall-selector.sh"
 
 alias news="hacker-news-tui"
 
