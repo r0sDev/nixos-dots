@@ -47,6 +47,13 @@ let &t_SI = "\e[2 q"
 let &t_SR = "\e[2 q"
 let &t_EI = "\e[2 q"
 
+" Netrw como sidebar (estilo VSCode)
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_winsize = 25
+let g:netrw_browse_split = 4
+nnoremap <leader>e :Vexplore<CR>
+
 highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=233 guifg=NONE guibg=#121212
 autocmd InsertEnter * highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=234 guifg=NONE guibg=#1c1c1c
 autocmd InsertLeave * highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=233 guifg=NONE guibg=#121212
