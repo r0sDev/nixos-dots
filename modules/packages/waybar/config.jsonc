@@ -12,7 +12,7 @@
     ],
     "modules-right": [
         "network",
-        "memory",
+        "custom/memory",
         "cpu",
     ],
 
@@ -24,8 +24,10 @@
         "format": "{usage}%",
         "tooltip": false
     },
-    "memory": {
-        "format": "{}%"
+    "custom/memory": {
+        "exec": "free -m | awk '/Mem:/ {print $3\" MB\"}'",
+        "interval": 5,
+        "tooltip": false
     },
     "battery": {
         "format": "{capacity}%",
