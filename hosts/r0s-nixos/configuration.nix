@@ -12,14 +12,7 @@
   systemd.services.NetworkManager-wait-online.enable = false;
   programs.mango.enable = true;
   services.xserver.enable = true;
-  services.displayManager.ly = {
-    enable = true;
-    settings = {
-      background = "/home/r0s/media/wall/kittensgame.jpg";
-      bg_fill = "fill";
-      background_color = "#000000";
-    };
-  };
+  services.displayManager.ly.enable = true;
 
   services.openssh.enable = false;
   networking.firewall.enable = true;
