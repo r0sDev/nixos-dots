@@ -113,9 +113,6 @@
   environment.systemPackages = with pkgs; [
   openssh
   termshark
-  tcpdump
-  wget
-  networkmanagerapplet
   anydesk
   rustdesk
   nmap
@@ -128,13 +125,11 @@
   swaybg
   brightnessctl
   playerctl
-  pulseaudio
   pavucontrol
-  feh
   (dmenu.override { conf = builtins.readFile ./dmenu/config.h;})
   bemenu
-  dunst
-  
+
+  (st.override { conf = builtins.readFile ./st/config.h; patches = [ ./st/patches/scrollback.diff ];  })
   fastfetch
   cpufetch
   acpi
@@ -142,17 +137,12 @@
   fzf
   ripgrep
   fd
-  eza
   git
   gh
   vim
-  (st.override { conf = builtins.readFile ./st/config.h; patches = [ ./st/patches/scrollback.diff ];  })
   gcc
   util-linux
-  git-quick-stats
-  ascii-image-converter
 
-  mpv
   ffmpeg
   wireplumber
   alsa-utils
@@ -170,10 +160,7 @@
   obsidian
   taskwarrior2
   libreoffice 
-  pkgs.ueberzugpp
-  logisim-evolution
-  thokr
-  mullvad
+  ueberzugpp
  ]; 
 
   environment.sessionVariables = {
