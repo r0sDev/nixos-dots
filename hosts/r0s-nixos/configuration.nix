@@ -2,7 +2,6 @@
 {
   imports = [
    ./hardware-configuration.nix
-   inputs.mangowm.nixosModules.mango
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -10,8 +9,8 @@
   
   networking.networkmanager.enable = true;
   systemd.services.NetworkManager-wait-online.enable = false;
-  programs.mango.enable = true;
   services.xserver.enable = true;
+  services.xserver.windowManager.dwm.enable = true;
   services.displayManager.ly.enable = true;
 
   services.openssh.enable = false;
@@ -119,7 +118,7 @@
   cifs-utils
   qemu
   
-  inputs.mangowm.packages.x86_64-linux.mango
+  (dwm.override { conf = builtins.readFile ./dwm/config.h; })
   waybar
   wlr-randr
   swaybg
