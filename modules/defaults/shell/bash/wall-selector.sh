@@ -11,27 +11,27 @@ read -p "select wall: " selectedWall
 case $selectedWall in
     one)
     echo "selected wall 1"
-    swaybg -i "$WALL1" -m fill &
+    feh --bg-fill "$WALL1"
     ;;
     two)
     echo "selected wall 2"
-    swaybg -i "$WALL2" -m fill &
+    feh --bg-fill "$WALL2"
     ;;
     three)
     echo "selected wall 3"
-    swaybg -i "$WALL3" -m fill & 
+    feh --bg-fill "$WALL3"
     ;;
     four)
     echo "selected wall 4"
-    swaybg -i "$WALL4" -m fill &
+    feh --bg-fill "$WALL4"
     ;;
     five)
     echo "selected wall 5"
-    swaybg -i "$WALL5" -m fill &
+    feh --bg-fill "$WALL5"
     ;;
     six)
     echo "selected wall 6"
-    swaybg -i "$WALL6" -m fill &
+    feh --bg-fill "$WALL6"
     ;;
     *)
     echo "error on typing"

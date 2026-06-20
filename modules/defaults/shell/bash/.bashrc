@@ -1,7 +1,6 @@
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
-alias focus="echo 'press mod+shift+f'"
 alias mountUsb="echo 'execute lsblk
 sudo mkdir -p /mnt/usb
 sudo mount /dev/sdx /mnt/usb'"
@@ -26,7 +25,8 @@ alias gc="git commit -m"
 alias gp="git push"
 alias nix-repo="~/development/updaters/nixos-dots-update.sh"
 
-alias hLeft="wlr-randr --output HDMI-A-1 --mode 1366x768 --pos 0,0"
+alias hLeft="xrandr --output HDMI-1 --mode 1366x768 --pos 0x0 \
+       --output eDP-1 --primary --mode 1920x1080 --pos 1920x0"
 
 alias terminus="~/development/desktop/fonts/fontTerminus.sh"
 alias cmu="~/development/desktop/fonts/fontCMU.sh"
