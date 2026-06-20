@@ -10,9 +10,8 @@
   networking.networkmanager.enable = true;
   systemd.services.NetworkManager-wait-online.enable = false;
   services.xserver.enable = true;
+  services.xserver.displayManager.startx.enable = true;
   services.xserver.windowManager.dwm.enable = true;
-  services.displayManager.ly.enable = true;
-
   services.openssh.enable = false;
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [];
@@ -118,17 +117,19 @@
   cifs-utils
   qemu
   
-  (dwm.override { conf = builtins.readFile ./dwm/config.h; })
-  waybar
-  wlr-randr
-  swaybg
+  (dwm.override {
+    conf = builtins.readFile ./dwm/config.h; 
+  })
+  xorg.xinit
   brightnessctl
   playerctl
   pavucontrol
-  (dmenu.override { conf = builtins.readFile ./dmenu/config.h;})
   bemenu
 
   (st.override { conf = builtins.readFile ./st/config.h; patches = [ ./st/patches/scrollback.diff ];  })
+  (dmenu.override { conf = builtins.readFile ./dmenu/config.h;})
+  xrandr
+  polybar
   fastfetch
   cpufetch
   acpi
@@ -141,6 +142,7 @@
   vim
   gcc
   util-linux
+  feh
 
   ffmpeg
   wireplumber
@@ -154,7 +156,7 @@
   zathura
   xdg-utils
   popsicle  
-  grim 
+  scrot
   
   obsidian
   taskwarrior2
