@@ -15,42 +15,18 @@ static const int topbar             = 0;        /* 0 means bottom bar */
 
 static const char *fonts[]          = { "cozette:pixelsize=16:antialias=false:autohint=true" };
 static const char dmenufont[]       = "cozette:pixelsize=16:antialias=false:autohint=true";
-
-/* colors */
-static const char col_bg1[]         = "#3b3836";
-static const char col_bg2[]         = "#32302f";
-static const char col_bg3[]         = "#45403d";
-static const char col_bg4[]         = "#A89984";
-static const char col_bg5[]         = "#5a524c";
-static const char col_bg6[]         = "#32302f";
-
-static const char col_fg1[]         = "#ebddb2";
-static const char col_fg2[]         = "#eee8d5";
-static const char col_fg3[]         = "#fdf6e3";
-static const char col_fg4[]			= "#073642";
-static const char col_fg5[]	        = "#657b83";
-
-
-static const char col_gray1[]       = "#7c6f64";
-static const char col_gray2[]       = "#7C6F64";
-
-
-static const char col_purple[]      = "#d3869b";
-static const char col_blue[]        = "#83a598";
-static const char col_aqua[]        = "#8ec07c";
-static const char col_green[]       = "#b8bb26";
-static const char col_yellow[]      = "#d79921";
-static const char col_orange[]      = "#fe8019";
-static const char col_red[]         = "#fb4934";
-static const char col_dark_red[]    = "#cc241d";
-
-static const char col_white[]		= "#ffffff";
-
+static char normbgcolor[]           = "#ffffff";
+static char normbordercolor[]       = "#ffffff";
+static char normfgcolor[]           = "#000000";
+static char selfgcolor[]            = "#ffffff";
+static char selbordercolor[]        = "#000000";
+static char selbgcolor[]            = "#000000";
 static const char *colors[][3] = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = {col_bg4, col_bg6, col_bg1},
-	[SchemeSel] = {col_fg1, col_bg6, col_bg3},
+       /*               fg           bg           border   */
+       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
+       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 };
+
 
 /* tagging */
 static const char *tags[] = { "one", "two", "three", "four"};
@@ -86,8 +62,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg6,
-		  	      			"-nf", col_fg1, "-sb", col_yellow, "-sf", col_bg6, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor,
+                  "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *browser[]  = { "zen", NULL };
 
