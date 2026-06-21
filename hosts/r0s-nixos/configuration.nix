@@ -116,11 +116,15 @@
   nmap
   cifs-utils
   qemu
-  
-  (dwm.override {
-    conf = builtins.readFile ./dwm/config.h; 
-  })
-  xorg.xinit
+(dwm.overrideAttrs (old: {
+  postPatch = (old.postPatch or "") + ''
+    cp ${./dwm/config.h} config.h
+    cp ${./dwm/dwm.c} dwm.c
+    cp ${./dwm/drw.c} drw.c
+    cp ${./dwm/drw.h} drw.h
+  '';
+}))  
+   xorg.xinit
   brightnessctl
   playerctl
   pavucontrol
@@ -129,7 +133,6 @@
   (st.override { conf = builtins.readFile ./st/config.h; patches = [ ./st/patches/scrollback.diff ];  })
   (dmenu.override { conf = builtins.readFile ./dmenu/config.h;})
   xrandr
-  polybar
   fastfetch
   cpufetch
   acpi
@@ -176,9 +179,9 @@
    jetbrains-mono
    nerd-fonts.jetbrains-mono
    terminus_font
-   ibm-plex
    fairfax-hd
    fairfax
+   cozette
   ];
 
   fonts.fontconfig = {
