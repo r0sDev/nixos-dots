@@ -1,19 +1,12 @@
 /* appearance */
-static unsigned int borderpx  = 2;        /* border pixel of window */
-static char *font = "Fairfax:pixelsize=15";
+static unsigned int borderpx  = 3;        /* border pixel of window */
+static char *font = "CozetteVector:pixelsize=15";
 static int  linespace         = 0;        /* additional space between lines */
 static int  keepiconified     = 0;
 static float cwscale          = 1.0;
 static float chscale          = 1.0;
 
-/*
- * What program is execed by st depends of these precedence rules:
- * 1: program passed with -e
- * 2: utmp option
- * 3: SHELL environment variable
- * 4: value of shell in /etc/passwd
- * 5: value of shell below
- */
+
 static char *shell  = "/bin/sh";
 char *utmp          = NULL;
 /* scroll program: to enable use a string like "scroll" */
@@ -47,12 +40,12 @@ static double maxlatency = 33;
  * Blinking timeout (set to 0 to disable blinking) for the terminal blinking
  * attribute.
  */
-static unsigned int blinktimeout = 800;
+static unsigned int blinktimeout = 200;
 
 /*
  * thickness of underline and bar cursors
  */
-static unsigned int cursorthickness = 2;
+static unsigned int cursorthickness = 1;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
@@ -100,8 +93,8 @@ static const char *colorname[] = {
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#ffffff", /* default foreground colour */
-	"#000000", /* default background colour */
+	"#000000", /* default foreground colour */
+	"#ffffff", /* default background colour */
 };
 
 
