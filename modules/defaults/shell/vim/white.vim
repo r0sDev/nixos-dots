@@ -3,7 +3,7 @@ if exists('syntax_on')
     syntax reset
 endif
 
-let g:colors_name = 'marques-de-itu-white'
+let g:colors_name = 'white'
 set background=light
 
 " Base
