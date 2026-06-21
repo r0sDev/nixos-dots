@@ -2,7 +2,7 @@ set nocompatible
 set encoding=utf-8
 set history=500
 syntax on
-colorscheme marques-de-itu
+colorscheme white
 set nonumber
 set norelativenumber
 set signcolumn=no
