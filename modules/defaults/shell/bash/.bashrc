@@ -38,7 +38,7 @@ alias news="hacker-news-tui"
 
 alias pshit="~/.local/share/pseint/pseint.sh"
 
-PS1='\[\e[38;5;180m\]ssh://\u · \[\e[38;5;255m\]'
+PS1='\[\e[38;5;000m\]ssh://\u · \[\e[38;5;000m\]'
 export PS1
 export SUDO_PROMPT="
  type access: "
