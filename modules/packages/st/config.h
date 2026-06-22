@@ -1,5 +1,5 @@
 /* appearance */
-static char *font = "CozetteVector:pixelsize=12:antialias=true:autohint=true";
+static char *font = "CozetteVector:pixelsize=16:antialias=true:autohint=true";
 static int borderpx  = 2;       
 static int  linespace         = 0;        /* additional space between lines */
 static int  keepiconified     = 0;
