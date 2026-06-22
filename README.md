@@ -1,5 +1,3 @@
-# NixOS Dots
-
-My daily driver configuration.
+daily driver
 
 ![Screenshot](assets/capture.png)
