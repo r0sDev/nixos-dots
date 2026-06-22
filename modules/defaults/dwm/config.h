@@ -10,11 +10,11 @@ static const unsigned int gappiv    = 15;       /* vert inner gap between window
 static const unsigned int gappoh    = 20;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 20;       /* vert outer gap between windows and screen edge */
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
-static const int showbar            = 0;        /* 0 means no bar */
+static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 
-static const char *fonts[]          = { "cozette:pixelsize=16:antialias=false:autohint=true" };
-static const char dmenufont[]       = "cozette:pixelsize=16:antialias=false:autohint=true";
+static const char *fonts[]          = { "cozetteVector:pixelsize=18:antialias=false:autohint=true" };
+static const char dmenufont[]       = "cozetteVector:pixelsize=16:antialias=false:autohint=true";
 static char normbgcolor[]           = "#ffffff";
 static char normbordercolor[]       = "#ffffff";
 static char normfgcolor[]           = "#000000";
@@ -26,7 +26,6 @@ static const char *colors[][3] = {
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
        [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 };
-
 
 /* tagging */
 static const char *tags[] = { "one", "two", "three", "four"};
@@ -44,9 +43,9 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "",      tile },    /* first entry is default */
+	{ "",      NULL },    /* no layout function means floating behavior */
+	{ "",      monocle },
 };
 
 /* key definitions */
