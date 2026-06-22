@@ -160,7 +160,7 @@
   xdg-utils
   popsicle  
   scrot
-  
+
   obsidian
   taskwarrior2
   libreoffice 
