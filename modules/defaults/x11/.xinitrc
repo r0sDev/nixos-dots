@@ -27,7 +27,7 @@ while true; do
 
   date_str=$(date '+%H:%M')
 
-  xsetroot -name " ${ip} ${bat_str} ${ram} ${cpu} ${date_str}"
+  xsetroot -name " ${ip}  ${bat_str}  ${ram}  ${cpu}  ${date_str}"
 
 done &
 
