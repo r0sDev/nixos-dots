@@ -33,4 +33,5 @@ done &
 
 killall feh
 feh --bg-fill ~/media/wall/kittensgame.jpg &
+st -e ~/development/desktop/start.sh &
 exec dwm
