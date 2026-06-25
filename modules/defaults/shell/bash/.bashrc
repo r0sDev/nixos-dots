@@ -4,6 +4,7 @@ export PATH="$HOME/bin:$PATH"
 alias mountUsb="echo 'execute lsblk
 sudo mkdir -p /mnt/usb
 sudo mount /dev/sdx /mnt/usb'"
+alias home-lab="ssh the server"
 
 alias l='ll -la'
 alias sv="sudo vim"
