@@ -64,7 +64,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor,
                   "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *browser[]  = { "zen", NULL };
+static const char *browser[]  = { "qutebrowser", NULL };
 
 static const char *up_vol[]   = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%+",   NULL };
 static const char *down_vol[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%-",   NULL };
@@ -76,10 +76,10 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_e,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_z, spawn,          {.v = browser } },
+	{ MODKEY,                       XK_p, spawn,          {.v = browser } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_h,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_l,      focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_z,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_plus,   incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_minus,  incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_j,      setmfact,       {.f = -0.05} },
