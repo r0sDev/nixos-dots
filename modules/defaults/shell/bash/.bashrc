@@ -4,7 +4,7 @@ export PATH="$HOME/bin:$PATH"
 alias mountUsb="echo 'execute lsblk
 sudo mkdir -p /mnt/usb
 sudo mount /dev/sdx /mnt/usb'"
-alias home-lab="ssh the server"
+alias help_qute="~/development/help/luakit.txt"
 
 alias l='ll -la'
 alias sv="sudo vim"
@@ -39,7 +39,7 @@ alias news="hacker-news-tui"
 
 alias pshit="~/.local/share/pseint/pseint.sh"
 
-PS1='\[\e[38;5;000m\]ssh://\u · \[\e[38;5;000m\]'
+PS1='\[\e[38;5;000m\] \u · \[\e[38;5;000m\]'
 export PS1
 export SUDO_PROMPT="
  type access: "
