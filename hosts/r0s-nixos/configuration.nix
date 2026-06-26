@@ -109,6 +109,9 @@
   programs.virt-manager.enable = true;
   
   environment.systemPackages = with pkgs; [
+  bspwm
+  sxhkd
+
   openssh
   termshark
   anydesk
@@ -132,6 +135,7 @@
 
   (st.override { conf = builtins.readFile ./st/config.h; patches = [ ./st/patches/scrollback.diff ];  })
   (dmenu.override { conf = builtins.readFile ./dmenu/config.h;})
+  lemonbar
   xrandr
   fastfetch
   cpufetch
@@ -160,13 +164,14 @@
   xdg-utils
   popsicle  
   scrot
-
+  
+  qutebrowser
   obsidian
   taskwarrior2
   libreoffice 
   ueberzugpp
+  
  ]; 
-
   environment.sessionVariables = {
     XCURSOR_THEME    = "cz-Hickson-Black";
     XCURSOR_SIZE     = "32";
