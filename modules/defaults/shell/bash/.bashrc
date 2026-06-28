@@ -18,12 +18,12 @@ alias gp="git push"
 alias nix-repo="~/development/updaters/nixos-dots-update.sh"
 alias hLeft="xrandr --output HDMI-1 --mode 1366x768 --pos 0x0 \
        --output eDP-1 --primary --mode 1920x1080"
-"
 alias walls="~/development/desktop/wall-selector.sh"
 alias news="hacker-news-tui"
 alias pshit="~/.local/share/pseint/pseint.sh"
+alias help_ssh="echo 'remember to use duckdns.org'"
 
+# prompts
 PS1='\[\e[38;5;000m\] \u · \[\e[38;5;000m\]'
 export PS1
-export SUDO_PROMPT="
-please type encrypted access: "
+export SUDO_PROMPT="please type encrypted access: "

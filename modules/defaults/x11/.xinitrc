@@ -36,7 +36,7 @@ while true; do
   done
 
   echo "%{l}${ws_str}%{r} ${ip}  ${bat_str}  ${ram}  ${cpu}  ${date_str} "
-done | lemonbar -p -f "monospace:size=10" -B "#000000" -F "#ffffff" -g x20+0-0 -b &
+done | lemonbar -p -f "monospace:size=12" -B "#000000" -F "#ffffff" -g x20+0-0 -b &
 
 
 killall feh
