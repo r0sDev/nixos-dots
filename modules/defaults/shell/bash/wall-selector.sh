@@ -9,27 +9,27 @@ WALL6="/home/r0s/media/wall/kittensgame.jpg"
 
 read -p "select wall: " selectedWall
 case $selectedWall in
-    one)
+    one|1)
     echo "selected wall 1"
     feh --bg-fill "$WALL1"
     ;;
-    two)
+    two|2)
     echo "selected wall 2"
     feh --bg-fill "$WALL2"
     ;;
-    three)
+    three|3)
     echo "selected wall 3"
     feh --bg-fill "$WALL3"
     ;;
-    four)
+    four|4)
     echo "selected wall 4"
     feh --bg-fill "$WALL4"
     ;;
-    five)
+    five|5)
     echo "selected wall 5"
     feh --bg-fill "$WALL5"
     ;;
-    six)
+    six|6)
     echo "selected wall 6"
     feh --bg-fill "$WALL6"
     ;;
