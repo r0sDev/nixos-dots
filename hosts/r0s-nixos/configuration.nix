@@ -142,18 +142,14 @@
     nmap
     termshark
     anydesk
-    rustdesk
-    qemu
 
     git
     gh
     vim
     gcc
-    fzf
     ripgrep
     fd
     fastfetch
-    cpufetch
     acpi
     btop
     scrot
@@ -166,7 +162,6 @@
     unzip
     zip
     unrar
-    p7zip
     popsicle
 
     qutebrowser
