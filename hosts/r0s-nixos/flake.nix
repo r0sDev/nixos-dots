@@ -1,4 +1,3 @@
-# flake.nix
 {
   description = "r0snix nixos config";
 
@@ -6,17 +5,18 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
-  let
-    system = "x86_64-linux";
-  in {
+  outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations.r0snix = nixpkgs.lib.nixosSystem {
-      inherit system;
+      system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
+        ({ pkgs, ... }: {
+          nixpkgs.overlays = [
+
+          ];
+        })
       ];
     };
   };
 }
-
