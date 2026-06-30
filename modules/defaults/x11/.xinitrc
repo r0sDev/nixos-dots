@@ -40,6 +40,5 @@ done | lemonbar -p -f "cozetteVector:size=12" -B "#000000" -F "#ffffff" -g x20+0
 
 
 killall feh
-feh --bg-fill ~/media/wall/kittensgame.jpg &
-st -e ~/development/desktop/start.sh &
+feh --bg-fill ~/media/wall/galen-crout.jpg &
 exec bspwm
