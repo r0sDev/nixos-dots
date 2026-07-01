@@ -80,12 +80,7 @@
 
   security.rtkit.enable = true;
   security.tpm2.enable = false;
-  security.wrappers.qemu-bridge-helper = {
-    source = "${pkgs.qemu}/libexec/qemu-bridge-helper";
-    owner  = lib.mkForce "root";
-    group  = lib.mkForce "kvm";
-    setuid = lib.mkForce true;
-  };
+
 
   services.pipewire = {
     enable       = true;
@@ -96,14 +91,15 @@
   hardware.bluetooth.enable = false;
 
   virtualisation.libvirtd.enable = true;
+  programs.qemu.enable = true;
   programs.virt-manager.enable = true;
 
-  environment.etc."qemu/bridge.conf".text = "allow br0\n";
+
 
   users.users.r0s = {
     isNormalUser = true;
     description  = "me btw";
-    extraGroups  = [ "networkmanager" "wheel" "video" "audio" "input" "libvirtd" "kvm" ];
+    extraGroups  = [ "networkmanager" "wheel" "video" "audio" "input" "libvirtd" "kvm" "qemu" ];
     packages     = with pkgs; [];
   };
 
@@ -168,6 +164,8 @@
     obsidian
     taskwarrior2
     libreoffice
+
+qemu
   ];
 
   fonts.packages = with pkgs; [
