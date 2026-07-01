@@ -89,17 +89,15 @@
   };
 
   hardware.bluetooth.enable = false;
+  hardware.graphics.enable = true;
 
   virtualisation.libvirtd.enable = true;
-  programs.qemu.enable = true;
   programs.virt-manager.enable = true;
-
-
 
   users.users.r0s = {
     isNormalUser = true;
     description  = "me btw";
-    extraGroups  = [ "networkmanager" "wheel" "video" "audio" "input" "libvirtd" "kvm" "qemu" ];
+    extraGroups  = [ "networkmanager" "wheel" "video" "audio" "input" "libvirtd" "kvm"  ];
     packages     = with pkgs; [];
   };
 
@@ -107,9 +105,17 @@
     AMD_VULKAN_ICD    = "RADV";
     VDPAU_DRIVER      = "radeonsi";
     LIBVA_DRIVER_NAME = "radeonsi";
+    MOZ_X11_EGL       = "1";
+    MOZ_ENABLE_WAYLAND = "0";
   };
 
   environment.systemPackages = with pkgs; [
+    (pkgs.writeShellScriptBin "zen-browser" ''
+      export MOZ_ENABLE_WAYLAND=0
+      export MOZ_X11_EGL=1
+      exec /nix/store/hq6v8z26cxvaxgwpk73clmlqx09idf67-zen-browser-1.18.4b/bin/zen "$@"
+    '')
+
     (st.override {
       conf    = builtins.readFile ./st/config.h;
       patches = [ ./st/patches/scrollback.diff ];
@@ -161,11 +167,11 @@
     popsicle
 
     qutebrowser
+    nyxt
     obsidian
     taskwarrior2
     libreoffice
 
-qemu
   ];
 
   fonts.packages = with pkgs; [
