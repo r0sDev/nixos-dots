@@ -38,7 +38,7 @@ XF86AudioLowerVolume
     wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 
 XF86AudioRaiseVolume
-    wpctl set-colume @DEFAULT_AUDIO_SINK@ 5%+
+    wpctl set-volume -l 2.0 @DEFAULT_AUDIO_SINK@ 5%+
 
 # brightness
 XF86MonBrightnessUp
