@@ -35,10 +35,10 @@ while true; do
     fi
   done
 
-  echo "%{l}${ws_str}%{r} ${ip}  ${bat_str}  ${ram}  ${cpu}  ${date_str} "
+  echo "  %{l}${ws_str}%{r} ${ip}  ${bat_str}  ${ram}  ${cpu}  ${date_str}  "
 done | lemonbar -p -f "cozetteVector:size=12" -B "#000000" -F "#ffffff" -g x20+0-0 -b &
-
 
 killall feh
 feh --bg-fill ~/media/wall/galen-crout.jpg &
+
 exec bspwm
