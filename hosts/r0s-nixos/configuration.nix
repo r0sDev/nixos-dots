@@ -166,8 +166,6 @@
     unrar
     popsicle
 
-    qutebrowser
-    nyxt
     obsidian
     taskwarrior2
     libreoffice
