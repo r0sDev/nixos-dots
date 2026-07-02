@@ -12,7 +12,7 @@ super + d
 
 # browser
 super + p
-    qutebrowser
+    zen-browser
 
 # make sxhkd reload its configuration files:
 super + Escape
