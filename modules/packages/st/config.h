@@ -1,7 +1,7 @@
 /* appearance */
 static char *font = "CozetteVector:pixelsize=17:antialias=true:autohint=true";
 static int borderpx  = 2;       
-static int  linespace         = 0;        /* additional space between lines */
+static int  linespace         = 1;        /* additional space between lines */
 static int  keepiconified     = 0;
 static float cwscale          = 1.0;
 static float chscale          = 1.0;
@@ -94,7 +94,7 @@ static const char *colorname[] = {
 
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#000000", /* default foreground colour */
-	"#eeeeee", /* default background colour */
+	"#ffffff", /* default background colour */
 };
 
 
