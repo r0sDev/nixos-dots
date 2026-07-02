@@ -24,6 +24,7 @@ alias pshit="~/.local/share/pseint/pseint.sh"
 alias help_ssh="echo 'remember to use duckdns.org'"
 
 # prompts
-PS1='\[\e[38;5;000m\] \u · \[\e[38;5;000m\]'
+# PS1='\[\e[38;5;000m\] \u · \[\e[38;5;000m\]'
+ PS1='\[\e[38;5;255m\] \u · \[\e[38;5;255m\]'
 export PS1
 export SUDO_PROMPT="please type encrypted access: "
