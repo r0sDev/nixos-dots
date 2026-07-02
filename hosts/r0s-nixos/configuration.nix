@@ -156,6 +156,8 @@
     btop
     scrot
     feh
+    python3
+    python313Packages.pip
 
     yazi
     ueberzugpp
