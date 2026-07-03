@@ -1,6 +1,6 @@
 /* appearance */
-static char *font = "CozetteVector:pixelsize=17:antialias=true:autohint=true";
-static int borderpx  = 2;       
+static char *font = "Cozette:pixelsize=17:antialias=true:autohint=true";
+static int borderpx  = 7;       
 static int  linespace         = 1;        /* additional space between lines */
 static int  keepiconified     = 0;
 static float cwscale          = 1.0;
