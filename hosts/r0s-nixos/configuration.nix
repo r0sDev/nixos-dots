@@ -58,6 +58,13 @@
     StateDirectory = "systemd/timesync";
   };
 
+  services.openssh = {
+    enable = true;
+    ports = [ 22 ];
+    permitRootLogin = "yes";
+    passwordAuthentication = true;
+  };
+
   services.xserver.enable = true;
   services.xserver.displayManager.startx.enable = true;
   services.xserver.xkb = {
@@ -65,7 +72,6 @@
     variant = "";
   };
 
-  services.openssh.enable = false;
   services.timesyncd.enable = true;
   services.timesyncd.servers = [
     "time.cloudflare.com"
