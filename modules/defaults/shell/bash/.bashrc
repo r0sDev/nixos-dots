@@ -16,7 +16,7 @@ alias ga="git add"
 alias gc="git commit -m"
 alias gp="git push"
 alias nix-repo="~/development/updaters/nixos-dots-update.sh"
-alias hLeft="xrandr --output eDP-1 --mode 1920x1080 --output HDMI-1 --mode 1366x768 --left-of eDP-1"
+alias hRight="xrandr --output eDP-1 --mode 1920x1080 --output HDMI-1 --mode 1366x768 --right-of eDP-1"
 alias walls="~/development/desktop/wall-selector.sh"
 alias news="hacker-news-tui"
 alias pshit="~/.local/share/pseint/pseint.sh"
@@ -24,10 +24,11 @@ alias help_ssh="echo 'remember to use duckdns.org'"
 
 # prompts
 
-PS1='\[\e[38;5;255m\]╭·$(free -h 2>/dev/null | awk '\''/^Mem:/ {print $3}'\'')·\w·╮\n╰·⚔ \[\e[0m\] '
+PS1='\[\e[38;5;255m\]╭·$(free -h 2>/dev/null | awk '\''/^Mem:/ {print $3}'\'')·[\w]·╮\n╰·\[\e[0m\] '
 
 #PS1='\[\e[38;5;62m\]╭\[\e[38;5;62m\]·\[\e[38;5;62m\]$(free -h 2>/dev/null | awk '\''/^Mem:/ {print $3}'\'')\[\e[38;5;62m\]·\[\e[38;5;62m\][\[\e[38;5;252m\]\w\[\e[38;5;62m\]]\[\e[38;5;62m\]·\[\e[38;5;62m\]╮\n\[\e[38;5;62m\]╰\[\e[38;5;62m\]·\[\e[38;5;62m\]⚔ \[\e[0m\] '
 # PS1='\[\e[38;5;000m\] \u · \[\e[38;5;000m\]'
 # PS1='\[\e[38;5;255m\] \u · \[\e[38;5;255m\]'
 export PS1
 export SUDO_PROMPT="please type encrypted access: "
+fastfetch
