@@ -96,7 +96,8 @@
   hardware.bluetooth.enable = false;
   hardware.graphics.enable = true;
 
-  virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd.enable = false;
+  systemd.services.libvirt-guests.enable = false;
   programs.virt-manager.enable = true;
 
   users.users.r0s = {
