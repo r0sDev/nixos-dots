@@ -51,7 +51,7 @@
     "9.9.9.9"
   ];
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [];
+  networking.firewall.allowedTCPPorts = [ ];
 
   systemd.services.NetworkManager-wait-online.enable = false;
   systemd.services.systemd-timesyncd.serviceConfig = {
@@ -86,7 +86,6 @@
   security.rtkit.enable = true;
   security.tpm2.enable = false;
 
-
   services.pipewire = {
     enable       = true;
     alsa.enable  = true;
@@ -97,13 +96,11 @@
   hardware.graphics.enable = true;
 
   virtualisation.libvirtd.enable = false;
-  systemd.services.libvirt-guests.enable = false;
-  programs.virt-manager.enable = true;
 
   users.users.r0s = {
     isNormalUser = true;
     description  = "me btw";
-    extraGroups  = [ "networkmanager" "wheel" "video" "audio" "input" "libvirtd" "kvm"  ];
+    extraGroups  = [ "networkmanager" "wheel" "video" "audio" "input" ];
     packages     = with pkgs; [];
   };
 
@@ -113,6 +110,14 @@
     LIBVA_DRIVER_NAME = "radeonsi";
     MOZ_X11_EGL       = "1";
     MOZ_ENABLE_WAYLAND = "0";
+  };
+  
+  security.doas = {
+    enable = true;
+    extraRules = [{
+      users = [ "r0s" ];
+      persist = true;
+    }];
   };
 
   environment.systemPackages = with pkgs; [
@@ -137,6 +142,7 @@
     bemenu
     lemonbar
 
+    doas
     pavucontrol
     playerctl
     brightnessctl
@@ -145,6 +151,9 @@
     cifs-utils
     util-linux
     ffmpeg
+
+    python3
+    python313Packages.pip
 
     openssh
     nmap
@@ -162,8 +171,6 @@
     btop
     scrot
     feh
-    python3
-    python313Packages.pip
 
     yazi
     ueberzugpp
@@ -171,7 +178,6 @@
     xdg-utils
     unzip
     zip
-    unrar
     popsicle
 
     obsidian
@@ -181,12 +187,13 @@
   ];
 
   fonts.packages = with pkgs; [
-    jetbrains-mono
     nerd-fonts.jetbrains-mono
     terminus_font
     fairfax-hd
     fairfax
     cozette
+    siji
+    dina-font
   ];
 
   fonts.fontconfig = {
