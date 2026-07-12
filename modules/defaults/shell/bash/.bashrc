@@ -2,7 +2,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export BROWSER=zen-browser
 
-RED='\[\e[38;2;230;87;64m\]'
+RED='\[\e[31m\]'
 WHITE='\[\e[38;5;255m\]'
 RESET='\[\e[0m\]'
 
