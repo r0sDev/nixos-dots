@@ -1,9 +1,9 @@
 # daily driver
-nixos
-bspwm
-st
-lemonbar
-dmenu
-scrot
+nixos  \n
+bspwm   \n
+st   \n
+lemonbar   \n
+dmenu   \n
+scrot   
 
 ![Screenshot](assets/capture.png)
