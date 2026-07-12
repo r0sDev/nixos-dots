@@ -102,6 +102,7 @@
     description  = "me btw";
     extraGroups  = [ "networkmanager" "wheel" "video" "audio" "input" ];
     packages     = with pkgs; [];
+    shell = pkgs.tcsh;
   };
 
   environment.sessionVariables = {
@@ -138,6 +139,7 @@
     bspwm
     sxhkd
     xinit
+    tcsh
     xrandr
     bemenu
     lemonbar
