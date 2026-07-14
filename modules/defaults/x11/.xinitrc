@@ -24,8 +24,8 @@ while true; do
 
     date_str=$(date '+%H:%M')
 
-    echo "%{c}${ip}    ${bat_str}    ${date_str}"
- done | lemonbar -p -f "Siji:size=10" -B "#000000" -F "#ffffff" -g 200x20+850-100 -b &
+    echo "%{c}${ip}  ${bat_str}  ${date_str}"
+ done | lemonbar -p -f "Siji:size=10" -B "#000000" -F "#ffffff" -g 200x20+858-100 -b &
 
  killall feh 
  feh --bg-fill ~/media/wall/white-solid-color.png &
