@@ -61,8 +61,8 @@
   services.openssh = {
     enable = true;
     ports = [ 22 ];
-    permitRootLogin = "yes";
-    passwordAuthentication = true;
+    permitRootLogin = "no";
+    passwordAuthentication = false;
   };
 
   services.xserver.enable = true;
@@ -79,7 +79,7 @@
     "1.ar.pool.ntp.org"
     "2.ar.pool.ntp.org"
   ];
-  services.dnscrypt-proxy.enable = true;
+
   services.udisks2.enable = false;
   services.avahi.enable = false;
 
@@ -102,7 +102,6 @@
     description  = "me btw";
     extraGroups  = [ "networkmanager" "wheel" "video" "audio" "input" ];
     packages     = with pkgs; [];
-    shell = pkgs.tcsh;
   };
 
   environment.sessionVariables = {
@@ -122,6 +121,9 @@
   };
 
   environment.systemPackages = with pkgs; [
+    (dmenu.override {
+      conf = builtins.readFile ./dmenu/config.h;
+    })
     (pkgs.writeShellScriptBin "zen-browser" ''
       export MOZ_ENABLE_WAYLAND=0
       export MOZ_X11_EGL=1
@@ -132,10 +134,9 @@
       conf    = builtins.readFile ./st/config.h;
       patches = [ ./st/patches/scrollback.diff ];
     })
-    (dmenu.override {
-      conf = builtins.readFile ./dmenu/config.h;
-    })
 
+    doas
+    gcc
     bspwm
     sxhkd
     xinit
@@ -144,7 +145,6 @@
     bemenu
     lemonbar
 
-    doas
     pavucontrol
     playerctl
     brightnessctl
@@ -154,9 +154,6 @@
     util-linux
     ffmpeg
 
-    python3
-    python313Packages.pip
-
     openssh
     nmap
     termshark
@@ -165,7 +162,6 @@
     git
     gh
     vim
-    gcc
     ripgrep
     fd
     fastfetch
@@ -184,15 +180,11 @@
 
     obsidian
     taskwarrior2
-    libreoffice
 
   ];
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
-    terminus_font
-    fairfax-hd
-    fairfax
     cozette
     siji
     dina-font

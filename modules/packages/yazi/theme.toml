@@ -1,88 +1,131 @@
-[flavor]
-dark = ""
-light = ""
+# ~/.config/yazi/theme.toml
+# Tema monocromatico y minimalista (solo blanco / negro / gris)
+#:schema https://yazi-rs.github.io/schemas/theme.json
 
+# : Manager {{{
 [mgr]
 cwd = { fg = "white" }
-
-# Fila bajo el cursor al navegar: fondo blanco fijo
-hovered         = { fg = "black", bg = "white" }
-preview_hovered = { fg = "black", bg = "white" }
 
 find_keyword  = { fg = "white", bold = true, underline = true }
 find_position = { fg = "gray", bg = "reset", bold = true }
 
-symlink_target = { fg = "gray", italic = true }
+symlink_target = { italic = true }
 
-marker_copied   = { fg = "white",    bg = "white" }
-marker_cut      = { fg = "darkgray", bg = "darkgray" }
-marker_marked   = { fg = "gray",     bg = "gray" }
-marker_selected = { fg = "white",    bg = "white" }
+marker_copied   = { fg = "white", bg = "white" }
+marker_cut      = { fg = "gray", bg = "gray" }
+marker_marked   = { fg = "white", bg = "white" }
+marker_selected = { fg = "white", bg = "white" }
+marker_symbol   = "│"
 
 count_copied   = { fg = "black", bg = "white" }
-count_cut      = { fg = "black", bg = "darkgray" }
-count_selected = { fg = "black", bg = "gray" }
+count_cut      = { fg = "black", bg = "gray" }
+count_selected = { fg = "black", bg = "white" }
 
 border_symbol = "│"
-border_style  = { fg = "darkgray" }
+border_style  = { fg = "gray" }
+# : }}}
 
-[indicator]
-parent  = { fg = "darkgray" }
-current = { fg = "white" }
-preview = { fg = "darkgray" }
-
+# : Tabs {{{
 [tabs]
-active   = { fg = "black", bg = "white" }
+active   = { fg = "black", bg = "white", bold = true }
 inactive = { fg = "gray" }
 
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+# : }}}
+
+# : Mode {{{
 [mode]
 normal_main = { fg = "black", bg = "white", bold = true }
-normal_alt  = { fg = "white", bg = "darkgray" }
-select_main = { fg = "black", bg = "gray", bold = true }
-select_alt  = { fg = "gray", bg = "darkgray" }
-unset_main  = { fg = "black", bg = "darkgray", bold = true }
-unset_alt   = { fg = "darkgray", bg = "black" }
+normal_alt  = { fg = "white", bg = "gray" }
 
+select_main = { fg = "black", bg = "white", bold = true }
+select_alt  = { fg = "white", bg = "gray" }
+
+unset_main = { fg = "black", bg = "white", bold = true }
+unset_alt  = { fg = "white", bg = "gray" }
+# : }}}
+
+# : Indicator of hovered file {{{
+[indicator]
+parent  = { reversed = true }
+current = { reversed = true }
+preview = { underline = true }
+# : }}}
+
+# : Status bar {{{
 [status]
+overall = {}
+
+perm_sep   = { fg = "gray" }
 perm_type  = { fg = "white" }
 perm_read  = { fg = "white" }
-perm_write = { fg = "gray" }
+perm_write = { fg = "white" }
 perm_exec  = { fg = "white" }
-perm_sep   = { fg = "darkgray" }
+
 progress_label  = { fg = "white", bold = true }
-progress_normal = { fg = "white", bg = "darkgray" }
-progress_error  = { fg = "darkgray", bg = "black" }
+progress_normal = { fg = "white", bg = "gray" }
+progress_error  = { fg = "black", bg = "white" }
+# : }}}
 
+# : Which {{{
 [which]
-cand = { fg = "white" }
-rest = { fg = "darkgray" }
-desc = { fg = "gray" }
+mask            = { bg = "black" }
+cand            = { fg = "white" }
+rest            = { fg = "gray" }
+desc            = { fg = "white" }
+separator       = " → "
+separator_style = { fg = "gray" }
+# : }}}
 
+# : Confirmation {{{
+[confirm]
+border   = { fg = "white" }
+title    = { fg = "white" }
+btn_yes  = { reversed = true }
+# : }}}
+
+# : Picker {{{
+[pick]
+border   = { fg = "white" }
+active   = { fg = "white", bold = true }
+inactive = {}
+# : }}}
+
+# : Input {{{
+[input]
+border   = { fg = "white" }
+title    = {}
+value    = {}
+selected = { reversed = true }
+# : }}}
+
+# : Completion {{{
+[cmp]
+border   = { fg = "white" }
+active   = { reversed = true }
+inactive = {}
+# : }}}
+
+# : Task manager {{{
 [tasks]
 border  = { fg = "white" }
-hovered = { fg = "black", bg = "white" }
-
-[help]
-on      = { fg = "white" }
-run     = { fg = "gray" }
-desc    = { fg = "darkgray" }
+title   = {}
 hovered = { fg = "black", bg = "white", bold = true }
+# : }}}
 
-# Sin color por tipo de archivo, todo en gris/blanco
+# : Help menu {{{
+[help]
+border  = { fg = "white" }
+chord   = { fg = "white" }
+hovered = { reversed = true, bold = true }
+# : }}}
+
+# : File-specific styles {{{
+# Todo en blanco/gris; sin colores por tipo de archivo
 [filetype]
 rules = [
-  { url = "*/", fg = "white", bold = true },
-  { url = "*", is = "orphan", fg = "darkgray" },
-  { url = "*", is = "exec", fg = "white", bold = true },
-  { url = "*", fg = "gray" },
+	{ mime = "*", fg = "white" },
+	{ url = "*/", fg = "white", bold = true },
 ]
-
-# Iconos fuera, monocromo real sin glifos de color
-[icon]
-dirs  = []
-files = []
-exts  = []
-globs = []
-conds = [
-  { if = "dir", text = "/" },
-]
+# : }}}

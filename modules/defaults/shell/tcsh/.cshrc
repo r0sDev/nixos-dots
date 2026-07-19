@@ -8,11 +8,11 @@ set white="%{\033[38;5;255m%}"
 set red="%{\033[31m%}"
 set reset="%{\033[0m%}"
 
-set prompt="%{\033[37m%}╭·%{\033[31m%}[%~]%{\033[37m%}·╮\n╰·%{\033[0m%}"
+set prompt="%{\033[37m%} $ %{\033[0m%}"
 
-alias sudo       doas
+alias sudo       echo 'use doas btw'
 alias l          "ls -lah"
-alias sv         "doas vim"
+alias dv         "doas vim"
 
 alias net        nmcli
 alias netSearch  "nmcli device wifi list"
