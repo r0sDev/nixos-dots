@@ -4,19 +4,17 @@
 
 # terminal emulator
 super + Return
-	st
+	env -u SHELL st
 
 # program launcher
 super + d
 	dmenu_run
 
 # browser
-super + p
+super + shift + p
     zen-browser
 
 # captures
-super + c
-    scrot ~/media/capture.png
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -71,7 +69,7 @@ super + g
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
-super + space 
+super + space
     bspc node -t ~floating
 
 # set the node flags

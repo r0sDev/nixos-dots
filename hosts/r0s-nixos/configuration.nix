@@ -102,6 +102,7 @@
     description  = "me btw";
     extraGroups  = [ "networkmanager" "wheel" "video" "audio" "input" ];
     packages     = with pkgs; [];
+    shell = pkgs.tcsh;
   };
 
   environment.sessionVariables = {
@@ -119,7 +120,7 @@
       persist = true;
     }];
   };
-
+  
   environment.systemPackages = with pkgs; [
     (dmenu.override {
       conf = builtins.readFile ./dmenu/config.h;

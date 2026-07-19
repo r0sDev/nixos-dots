@@ -7,7 +7,7 @@ static float cwscale          = 1.0;
 static float chscale          = 1.0;
 
 
-static char *shell  = "/bin/sh";
+static char *shell  = "/run/current-system/sw/bin/tcsh";
 char *utmp          = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll        = NULL;
