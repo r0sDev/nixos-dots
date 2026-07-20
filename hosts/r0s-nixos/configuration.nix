@@ -44,12 +44,13 @@
     "fs.protected_hardlinks"                 = 1;
   };
 
-  networking.hostName = "r0snix";
+  networking.hostName = "f0s_host";
   networking.networkmanager.enable = true;
   networking.nameservers = [
     "1.1.1.1"
     "9.9.9.9"
   ];
+
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ ];
 
@@ -80,9 +81,6 @@
     "2.ar.pool.ntp.org"
   ];
 
-  services.udisks2.enable = false;
-  services.avahi.enable = false;
-
   security.rtkit.enable = true;
   security.tpm2.enable = false;
 
@@ -92,10 +90,8 @@
     pulse.enable = true;
   };
 
-  hardware.bluetooth.enable = false;
+  hardware.bluetooth.enable = true;
   hardware.graphics.enable = true;
-
-  virtualisation.libvirtd.enable = false;
 
   users.users.r0s = {
     isNormalUser = true;
